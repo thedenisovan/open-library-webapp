@@ -1,16 +1,18 @@
-const img = document.createElement('img');
-const body = document.querySelector('body');
+export async function processData(bookTitle, author) {
+  const titleStr = editString(bookTitle);
+  const authorStr = editString(author);
 
-async function processData() {
-  const url = `https://openlibrary.org/search.json?q=onyx-storm`;
+  const url = `https://openlibrary.org/search.json?q=${titleStr}&author=${authorStr}`;
 
   const response = await fetch(url);
   const data = await response.json();
 
-  const coverId = data.docs[0].cover_i;
-  img.src = `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`;
-  img.style.width = '150px';
-  body.appendChild(img); 
+  console.log(data);
 }
 
-processData();
+processData('harry potter and the deathly hallows', 'J.K');
+
+// Returns acceptable string value for book search input
+function editString(str) {
+  return str.split(' ').join('').split('').join('+');
+}
