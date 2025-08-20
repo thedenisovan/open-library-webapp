@@ -10,8 +10,6 @@ export async function processBook(bookTitle, authorName) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(data.docs);
-
     return data.docs;
   }
   catch {

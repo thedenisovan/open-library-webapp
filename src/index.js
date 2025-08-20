@@ -1,3 +1,3 @@
-import './styles/reset.scss';
-import './styles/style.scss';
+import './style/reset.scss';
+import './style/style.scss';
 import './script/apiCall.js';

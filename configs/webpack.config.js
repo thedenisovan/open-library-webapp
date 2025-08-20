@@ -10,8 +10,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/template.html',
+      filename: 'template.html',
+      template: './src/pages/template.html',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: './src/pages/login.html',
+      chunks: []
+    })
   ],
   module: {
     rules: [
