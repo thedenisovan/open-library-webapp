@@ -6,7 +6,8 @@
     "test": "jest --coverage",
     "serve": "webpack serve --open",
     "clean": "npx prettier . --write",
-    "deploy": "./scripts/deploy.sh",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d configs/dist",
     "build": "webpack --config ./configs/webpack.prod.js",
     "dev": "webpack serve --open --config ./configs/webpack.dev.js"
   },
@@ -20,13 +21,14 @@
   "bugs": {
     "url": "https://github.com/mozartdd/template_repo/issues"
   },
-  "homepage": "https://github.com/mozartdd/template_repo#readme",
+  "homepage": "https://thedenisovan.github.io/open-library-webapp",
   "description": "",
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "babel-jest": "^30.0.5",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "ngeohash": "^0.6.3",
