@@ -6,7 +6,52 @@
     <title>E-Read</title>
     <link rel="icon" type="image/x-icon" href="../assets/book-favicon.png">
   </head>
-  <body>
-    <a href="template.html">template file</a>
+  <body id="login">
+    <!-- ===CUBE SECTION=== -->
+    <div id="cube-container" aria-hidden="true">
+      <div id="first-cube" class="container">
+        <div class="cube">
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+          <div class="face left"></div>
+          <div class="face right"></div>
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+      </div>
+      <div id="second-cube" class="container">
+        <div class="cube">
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+          <div class="face left"></div>
+          <div class="face right"></div>
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===REGISTRATION/LOGIN SECTION=== -->
+    <section id="registration-field">
+      <form>
+        <h1>Login</h1>
+        <p id="welcome">Welcome back to you account</p>
+        <label for="user-name"></label>
+        <input type="text" id="user-name" placeholder="Username" required>
+        
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Password" required>
+        
+        <label for="remember-me">
+          <input type="checkbox" id="remember-me">Remember-me
+        </label>
+        
+        <button id="signin-btn" data-signin>Login</button>
+        <p>Don't have an account? <a id="signup-btn" data-signup href="#">Sign up</a></p>
+      </form>
+      <div id="foreground">
+
+      </div>
+    </section>
   </body>
 </html>

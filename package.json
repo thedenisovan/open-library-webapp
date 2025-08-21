@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "jest": "^30.0.5",
+    "normalize.css": "^8.0.1",
     "react-geocode": "^2.0.1"
   }
 }

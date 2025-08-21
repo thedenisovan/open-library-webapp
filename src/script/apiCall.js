@@ -31,4 +31,4 @@ export async function processBookAuthor(authorName) {
   }
 }
 
-processBook('Blood of elves');
+processBook('Fantastic four');

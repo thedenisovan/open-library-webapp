@@ -2,9 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    // test: './src/test.js'
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -12,11 +15,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'template.html',
       template: './src/pages/template.html',
+      chunks: ['main']
     }),
     new HtmlWebpackPlugin({
       filename: 'login.html',
       template: './src/pages/login.html',
-      chunks: []
+      chunks: ['main']
     })
   ],
   module: {
