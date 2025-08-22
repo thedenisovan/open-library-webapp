@@ -34,8 +34,9 @@
     <!-- ===REGISTRATION/LOGIN SECTION=== -->
     <section id="registration-field">
       <form>
-        <h1>Login</h1>
-        <p id="welcome">Welcome back to you account</p>
+        <h1 class="visible">Login</h1>
+        <h1 class="hidden">Registration</h1>
+        <p id="welcome">Welcome to your account</p>
         <label for="user-name"></label>
         <input type="text" id="user-name" placeholder="Username" required data-username autocomplete="given-name">
         
@@ -46,19 +47,16 @@
           <input type="checkbox" id="remember-me" data-remember-me>Remember-me
         </label>
         
-        <button id="signin-btn" data-signin>Login</button>
-        <p>Don't have an account? <a id="signup-btn" data-signup href="#">Sign up</a></p>
+        <button type="button" id="signin-btn" data-signin class="entry-button visible">Signin</button>
+        <button type="button" id="registraion-btn" data-register class="hidden entry-button">Register</button>
+        <p class="visible">Don't have an account? <a class="page-btn" data-signup-page href="#">Sign up</a></p>
+        <p class="hidden">If you have an account? <a class="page-btn" data-signin-page href="#">Sign in</a></p>
         <div id="or-container">
           <div id="left-line"></div><p>Or</p><div id="right-line"></div>
         </div>
-        <p id="skip-link">Skip for now and <a href="#">enter</a></p>
-
-        <!-- <p id="made-by">Made by 
-          <a target="_blank" href="https://github.com/thedenisovan">Dainis Dilevka</a>
-        </p> -->
+        <p id="skip-link">Skip for now and <a aria-label="Enter without registration link" href="./template.html">enter</a> website</p>
       </form>
-      <div id="foreground">
-
+      <div data-foreground class="foreground blue-bg">
       </div>
     </section>
   </body>
