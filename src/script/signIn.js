@@ -3,6 +3,7 @@ const loginEls = {
   username: document.querySelector('[data-username]'),
   password: document.querySelector('[data-password]'),
   rememberMe: document.querySelector('[data-remember-me]'),
+  signinBtn: document.querySelector('[data-signin]'),
   signinPageBtn: document.querySelector('[data-signin-page]'),
   singUpPageBtn: document.querySelector('[data-signup-page]'),
   hidden: document.querySelectorAll('.hidden'),
@@ -10,7 +11,7 @@ const loginEls = {
   foreground: document.querySelector('[data-foreground]')
 }
 
-// Class instances of whom will store user personal details.
+// Class which will store user signin details.
 class PersonalDetails {
   constructor(username, password, isRemembered = false) {
     this.username = username;
@@ -18,7 +19,7 @@ class PersonalDetails {
     this.isRemembered = isRemembered;
   }
 }
-// Object which will store instances of personal details class.
+// Object which will store instances of signin details class.
 const users = new Object;
 
 // Initial users
