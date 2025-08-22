@@ -37,24 +37,29 @@
         <h1>Login</h1>
         <p id="welcome">Welcome back to you account</p>
         <label for="user-name"></label>
-        <input type="text" id="user-name" placeholder="Username" required>
+        <input type="text" id="user-name" placeholder="Username" required data-username autocomplete="given-name">
         
         <label for="password"></label>
-        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="password" placeholder="Password" required data-password autocomplete="current-password">
         
         <label for="remember-me">
-          <input type="checkbox" id="remember-me">Remember-me
+          <input type="checkbox" id="remember-me" data-remember-me>Remember-me
         </label>
         
         <button id="signin-btn" data-signin>Login</button>
         <p>Don't have an account? <a id="signup-btn" data-signup href="#">Sign up</a></p>
+        <div id="or-container">
+          <div id="left-line"></div><p>Or</p><div id="right-line"></div>
+        </div>
+        <p id="skip-link">Skip for now and <a href="#">enter</a></p>
+
+        <!-- <p id="made-by">Made by 
+          <a target="_blank" href="https://github.com/thedenisovan">Dainis Dilevka</a>
+        </p> -->
       </form>
       <div id="foreground">
 
       </div>
-      <p id="made-by">Made by 
-        <a target="_blank" href="https://github.com/thedenisovan">Dainis Dilevka</a>
-      </p>
     </section>
   </body>
 </html>
