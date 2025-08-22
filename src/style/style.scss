@@ -88,9 +88,15 @@ input[type='checkbox'] {
     background: linear-gradient(var(--blue), var(--light-beige));
 }
 
-.page-btn, #made-by a, #skip-link a {
+#registration-btn {
+    margin-top: 3rem;
+}
+
+.page-btn, 
+#made-by a, 
+#skip-link a {
     color: black;
-    text-decoration: none;
+    // text-decoration: none;
     cursor: pointer;
 }
 
