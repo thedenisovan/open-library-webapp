@@ -33,22 +33,24 @@
 
     <!-- ===REGISTRATION/LOGIN SECTION=== -->
     <section id="registration-field" data-main-field>
-      <form>
+      <form action="" method="post">
         <h1 class="visible">Login</h1>
         <h1 class="hidden">Registration</h1>
         <p id="welcome">Welcome to your account</p>
-        <label for="user-name"></label>
-        <input type="text" id="user-name" placeholder="Username" required data-username autocomplete="given-name">
+        <!-- <p class="hidden-p" id="username-criteria" data-min-username>*Min username length is 4 letters</p> -->
+        <label for="user-name">Username</label>
+        <input type="text" id="user-name" placeholder="e.g David" minlength="4" required data-username autocomplete="given-name">
          
-        <label for="password"></label>
-        <input type="password" id="password" placeholder="Password" required data-password autocomplete="current-password">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="6+ characters" minlength="6" required data-password autocomplete="current-password">
         
         <label class="visible" for="remember-me">
           <input type="checkbox" id="remember-me" data-remember-me>Remember-me
         </label>
         
-        <button type="button" id="signin-btn" data-signin class="entry-button visible">Signin</button>
-        <button type="button" id="registration-btn" data-register class="hidden entry-button">Register</button>
+        <!-- <p class="hidden-p" id="password-criteria" data-min-pass>*Min length is 4 letters</p> -->
+        <button id="signin-btn" data-signin class="entry-button visible">Signin</button>
+        <button type="submit" id="registration-btn" data-register class="hidden entry-button">Register</button>
         <p class="visible">Don't have an account? <a class="page-btn" data-signup-page href="#">Sign up</a></p>
         <p class="hidden">If you have an account <a class="page-btn" data-signin-page href="#">Sign in</a></p>
         <div id="or-container">

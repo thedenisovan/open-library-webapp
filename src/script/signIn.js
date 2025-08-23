@@ -1,4 +1,4 @@
-const signinEls = {
+export const signinEls = {
   username: document.querySelector('[data-username]'),
   password: document.querySelector('[data-password]'),
   rememberMe: document.querySelector('[data-remember-me]'),
@@ -18,14 +18,14 @@ class User {
 
 // Object which will store instances of signin details class.
 export let users;
-const retrievedUserStr = localStorage.getItem('users');
+let retrievedUserStr = localStorage.getItem('users');
 
 if(!retrievedUserStr) {
   users = new Object;
   // Initial users
-  const user1 = new User('jamal', '0000');
-  const user2 = new User('marquis', '1111');
-  const user3 = new User('samantha', '2222');
+  const user1 = new User('jamal', '000000');
+  const user2 = new User('marquis', '111111');
+  const user3 = new User('samantha', '222222');
   users[user1.username] = user1.password;
   users[user2.username] = user2.password;
   users[user3.username] = user3.password;
@@ -38,6 +38,7 @@ if(!retrievedUserStr) {
 function setLocalStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
 // Turns string from local storage back to obj state.
 function parseStorageData(data) {
   return JSON.parse(data);
@@ -65,7 +66,12 @@ function checkForExistingUser(username) {
 
 function makeNewUser(username, password) {
   if(checkForExistingUser(username)) {
-    alert(`${username} is not available.`);
+    return `${username} is not available.`;
+  } else if (
+    !signinEls.username.checkValidity() ||
+    !signinEls.password.checkValidity()
+  ) {
+    return  `Password minlength is 6 letters and usernames min length is 4 letters.`;
   }
   const newUser = new User(username, password);
   users[newUser.username] = newUser.password;
@@ -73,6 +79,7 @@ function makeNewUser(username, password) {
 
 function indexPageEventDelegation() {
   signinEls.mainField.addEventListener('click', (event) => {
+    event.preventDefault();
     const target = event.target;
 
     // Event listener for sign in button click
@@ -97,3 +104,4 @@ export function clearUserInput() {
 }
 
 indexPageEventDelegation();
+retrievedUserStr = localStorage.getItem('users');

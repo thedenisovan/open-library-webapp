@@ -14,6 +14,20 @@
     --neon-pink: #F200FF;
     
 }
+
+@font-face {
+    font-family: itim;
+    src: url(../assets/Itim/Itim-Regular.ttf);
+}
+@font-face {
+    font-family: open-sans;
+    src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+body {
+    font-family: itim, open-sans, system-ui, -apple-system !important;
+}
+
 // ===LOGIN AND SIGNUP PAGE===
 // ===MOBILE FIRST===
 body#login {
@@ -58,11 +72,28 @@ input:not([type='checkbox']) {
     border-radius: 5px;
     height: var(--input-height);
     width: 90%;
-    margin-top: 1rem;
 
     &::placeholder {
-        color: white;
+        color: rgb(221, 216, 216);
     }
+
+    &:user-valid {
+        outline-color: var(--form-valid);
+        border: 2px solid var(--form-valid);
+    }
+    &:user-invalid {
+        outline-color: var(--form-invalid);
+        border: 2px solid var(--form-invalid);
+    }
+}
+
+#username-criteria, #password-criteria {
+    color: rgb(233, 28, 28);
+    font-weight: 400;
+}
+
+#user-name {
+    margin-top: .1rem;
 }
 
 input[type='checkbox'] {
@@ -70,6 +101,7 @@ input[type='checkbox'] {
     height: 1.1rem;
     margin: .7rem .2rem 1.1rem -.1rem !important;
     margin-top: 1.1rem;
+    position: relative;
 
     cursor: pointer;
 }
@@ -86,6 +118,7 @@ input[type='checkbox'] {
     font-size: 1.3rem;
     cursor: pointer;
     background: linear-gradient(var(--blue), var(--light-beige));
+    
 }
 
 #registration-btn {
@@ -148,6 +181,6 @@ input[type='checkbox'] {
     left: 20%;
 }
 
-.hidden {
+.hidden, .hidden-p {
     display: none;
 }

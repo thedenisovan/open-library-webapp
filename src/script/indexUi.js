@@ -1,4 +1,5 @@
-import { clearUserInput } from "./signIn.js";
+import { clearUserInput, signinEls } from "./signIn.js";
+let isSignInScreen = true;
 
 // DOM elements of sign index page ui changes.
 export const domEls = {
@@ -26,8 +27,10 @@ function updateDisplay() {
 }
 
 domEls.singUpPageBtn.addEventListener('click', () => {
+  isSignInScreen = false;
   updateDisplay();
 });
 domEls.signinPageBtn.addEventListener('click', () => {
+  isSignInScreen = true;
   updateDisplay();
 });
