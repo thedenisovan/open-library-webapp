@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Read</title>
-    <link rel="icon" type="image/x-icon" href="../assets/book-favicon.png">
+    <link rel="icon" type="image/x-icon" href="../assets/book-favicon.png" />
   </head>
   <body id="login">
     <!-- ===CUBE SECTION=== -->
@@ -37,29 +37,75 @@
         <h1 class="visible">Login</h1>
         <h1 class="hidden">Registration</h1>
         <p id="welcome">Welcome to your account</p>
-        <!-- <p class="hidden-p" id="username-criteria" data-min-username>*Min username length is 4 letters</p> -->
+
         <label for="user-name">Username</label>
-        <input type="text" id="user-name" placeholder="e.g David" minlength="4" required data-username autocomplete="given-name">
-         
+        <input
+          type="text"
+          id="user-name"
+          placeholder="e.g David"
+          minlength="4"
+          required
+          data-username
+          autocomplete="given-name"
+        />
+
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="6+ characters" minlength="6" required data-password autocomplete="current-password">
-        
+        <input
+          type="password"
+          id="password"
+          placeholder="6+ characters"
+          minlength="6"
+          required
+          data-password
+          autocomplete="current-password"
+        />
+
         <label class="visible" for="remember-me">
-          <input type="checkbox" id="remember-me" data-remember-me>Remember-me
+          <input type="checkbox" id="remember-me" data-remember-me />Remember-me
         </label>
-        
-        <!-- <p class="hidden-p" id="password-criteria" data-min-pass>*Min length is 4 letters</p> -->
-        <button id="signin-btn" data-signin class="entry-button visible">Signin</button>
-        <button type="submit" id="registration-btn" data-register class="hidden entry-button">Register</button>
-        <p class="visible">Don't have an account? <a class="page-btn" data-signup-page href="#">Sign up</a></p>
-        <p class="hidden">If you have an account <a class="page-btn" data-signin-page href="#">Sign in</a></p>
-        <div id="or-container">
-          <div id="left-line"></div><p>Or</p><div id="right-line"></div>
+        <p id="error-placeholder" class="hidden" data-error></p>
+        <div id="rotator-container">
+          <img
+            class="hidden-svg rotating-svg"
+            data-rot
+            src="../assets/loading-svgrepo-com.svg"
+            width="40px"
+            alt=""
+          />
         </div>
-        <p id="skip-link">Skip and <a aria-label="Enter without registration link" href="./template.html">enter</a> website</p>
+        <button id="signin-btn" data-signin class="entry-button visible">
+          Signin
+        </button>
+        <button
+          type="submit"
+          id="registration-btn"
+          data-register
+          class="hidden entry-button"
+        >
+          Register
+        </button>
+        <p class="visible">
+          Don't have an account?
+          <a class="page-btn" data-signup-page href="#">Sign up</a>
+        </p>
+        <p class="hidden">
+          If you have an account
+          <a class="page-btn" data-signin-page href="#">Sign in</a>
+        </p>
+        <div id="or-container">
+          <div id="left-line"></div>
+          <p>Or</p>
+          <div id="right-line"></div>
+        </div>
+        <p id="skip-link">
+          Skip and
+          <a aria-label="Enter without registration link" href="./template.html"
+            >enter</a
+          >
+          website
+        </p>
       </form>
-      <div data-foreground class="foreground blue-bg">
-      </div>
+      <div data-foreground class="foreground blue-bg"></div>
     </section>
   </body>
 </html>

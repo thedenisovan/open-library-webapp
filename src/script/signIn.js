@@ -1,11 +1,15 @@
+import { updateDisplay, domEls } from './indexUi';
+
 export const signinEls = {
   username: document.querySelector('[data-username]'),
   password: document.querySelector('[data-password]'),
   rememberMe: document.querySelector('[data-remember-me]'),
   signinBtn: document.querySelector('[data-signin]'),
   registrationBtn: document.querySelector('[data-register]'),
-  mainField: document.querySelector('[data-main-field]')
-}
+  mainField: document.querySelector('[data-main-field]'),
+  errorPlaceholder: document.querySelector('[data-error]'),
+  rotationSvg: document.querySelector('[data-rot]'),
+};
 
 // Class which will store user signin details.
 class User {
@@ -17,11 +21,11 @@ class User {
 }
 
 // Object which will store instances of signin details class.
-export let users;
+let users;
 let retrievedUserStr = localStorage.getItem('users');
 
-if(!retrievedUserStr) {
-  users = new Object;
+if (!retrievedUserStr) {
+  users = new Object();
   // Initial users
   const user1 = new User('jamal', '000000');
   const user2 = new User('marquis', '111111');
@@ -35,7 +39,7 @@ if(!retrievedUserStr) {
 }
 
 // Adds user obj to local storage when function is called.
-function setLocalStorage(key, value) {
+export function setLocalStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
@@ -46,15 +50,16 @@ function parseStorageData(data) {
 
 // Function which iterates trough users object retrieved from local storage,
 // and if username and password mach grand successful entry else no entry.
-function signingIn(username, password) {
-  for (let [user,pass] of Object.entries(users)) {
-    if(user === username && pass === password) {
+export function signingIn(username, password) {
+  for (let [user, pass] of Object.entries(users)) {
+    if (user === username && pass === password) {
       return true;
     }
   }
   return false;
 }
 
+// Iterates trough users obj and look if user with give user name exists or not
 function checkForExistingUser(username) {
   for (let name of Object.keys(users)) {
     if (name === username) {
@@ -64,38 +69,49 @@ function checkForExistingUser(username) {
   return false;
 }
 
-function makeNewUser(username, password) {
-  if(checkForExistingUser(username)) {
-    return `${username} is not available.`;
-  } else if (
-    !signinEls.username.checkValidity() ||
-    !signinEls.password.checkValidity()
+// if userDetailValidation function return true creates new user
+export async function makeNewUser(username, password) {
+  signinEls.errorPlaceholder.textContent = '';
+  if (
+    !userDetailValidation(
+      signinEls.username,
+      signinEls.password,
+      signinEls.errorPlaceholder
+    )
   ) {
-    return  `Password minlength is 6 letters and usernames min length is 4 letters.`;
+    return null;
   }
+
   const newUser = new User(username, password);
   users[newUser.username] = newUser.password;
+  signinEls.rotationSvg.classList.remove('hidden-svg');
+  await setTimeout(() => {
+    signinEls.rotationSvg.classList.add('hidden-svg');
+    location.reload();
+  }, 1200);
+  return;
 }
 
-function indexPageEventDelegation() {
-  signinEls.mainField.addEventListener('click', (event) => {
-    event.preventDefault();
-    const target = event.target;
-
-    // Event listener for sign in button click
-    if(target.closest('#signin-btn')) {
-      if(signingIn(signinEls.username.value, signinEls.password.value)) {
-        window.location = './template.html';
-        // Event listener for registration button click
-      } else {
-        alert ('Unsuccessful signing in attempt.');
-        clearUserInput();
-      }
-    } else if (target.closest('#registration-btn')) {
-      makeNewUser(signinEls.username.value, signinEls.password.value);
-      setLocalStorage('users', users);
-    }
-  });
+// Looks if user details are appropriate length and that user with given nickname does not exist
+export function userDetailValidation(username, password, errorPlaceholder) {
+  if (!username.checkValidity() && !password.checkValidity()) {
+    console.log(username);
+    errorPlaceholder.textContent =
+      'Password minlength is 6 chars, username minlength is 4 chars.';
+    return false;
+  } else if (!username.checkValidity() && password.checkValidity()) {
+    errorPlaceholder.textContent =
+      'Username is too short, minlength is 4 chars.';
+    return false;
+  } else if (username.checkValidity() && !password.checkValidity()) {
+    errorPlaceholder.textContent =
+      'Password is too short, minlength is 6 chars.';
+    return false;
+  } else if (checkForExistingUser(username.value)) {
+    errorPlaceholder.textContent = `Username ${username.value} is not available.`;
+    return false;
+  }
+  return true;
 }
 
 export function clearUserInput() {
@@ -103,5 +119,9 @@ export function clearUserInput() {
   signinEls.password.value = '';
 }
 
-indexPageEventDelegation();
+export function getUser() {
+  return users;
+}
+
+// indexPageEventDelegation();
 retrievedUserStr = localStorage.getItem('users');

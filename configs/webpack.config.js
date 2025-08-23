@@ -15,13 +15,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'template.html',
       template: './src/pages/template.html',
-      chunks: ['main']
+      chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/pages/login.html',
-      chunks: ['main']
-    })
+      chunks: ['main'],
+    }),
   ],
   module: {
     rules: [

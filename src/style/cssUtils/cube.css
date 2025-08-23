@@ -17,7 +17,7 @@ body {
   justify-content: space-around;
   align-items: center;
 
-  filter: blur(.3rem);
+  filter: blur(0.3rem);
 }
 
 .container {
@@ -45,7 +45,7 @@ body {
 }
 
 .front {
-  transform: translateZ(calc(var(--cubes-width) / 2));;
+  transform: translateZ(calc(var(--cubes-width) / 2));
 }
 
 .back {
@@ -72,11 +72,11 @@ body {
 }
 
 #first-cube .cube .face {
-  background: linear-gradient(#7D8D86, #3E3F29);
+  background: linear-gradient(#7d8d86, #3e3f29);
 }
 
 #second-cube .cube .face {
-  background: linear-gradient(#3E3F29, #7D8D86);
+  background: linear-gradient(#3e3f29, #7d8d86);
 }
 
 #second-cube .cube {
@@ -84,10 +84,18 @@ body {
 }
 
 @keyframes rotate {
-  from {transform: rotate3d(0, 0, 0, 0);}
-  to {transform: rotate3d(1, 1, 0, 360deg);}
+  from {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  to {
+    transform: rotate3d(1, 1, 0, 360deg);
+  }
 }
 @keyframes negativeRotation {
-  from {transform: rotate3d(0, 0, 0, 0);}
-  to {transform: rotate3d(1, 1, 0, -360deg);}
+  from {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  to {
+    transform: rotate3d(1, 1, 0, -360deg);
+  }
 }

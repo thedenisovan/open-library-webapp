@@ -1,162 +1,169 @@
 :root {
-    --small-radius: 15px;
-    --input-height: 2rem;
+  --small-radius: 15px;
+  --input-height: 2rem;
 
-    --form-valid: rgba(20, 126, 20, 0.447);
-    --form-invalid: rgba(225, 80, 80, 0.463);
+  --form-valid: rgba(20, 126, 20, 0.447);
+  --form-invalid: rgba(216, 33, 33, 0.986);
 
-    --dark-green: #4b4d26;
-    --light-gree: #80916d;
-    --blue: #7D8D86;
-    --beige: #9b6a5b;
-    --brown: #613a2b;
-    --light-beige: #cbb397;
-    --neon-pink: #F200FF;
-    
+  --dark-green: #4b4d26;
+  --light-gree: #80916d;
+  --blue: #7d8d86;
+  --beige: #9b6a5b;
+  --brown: #613a2b;
+  --light-beige: #cbb397;
+  --neon-pink: #f200ff;
 }
 
 @font-face {
-    font-family: itim;
-    src: url(../assets/Itim/Itim-Regular.ttf);
+  font-family: itim;
+  src: url(../assets/Itim/Itim-Regular.ttf);
 }
 @font-face {
-    font-family: open-sans;
-    src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+  font-family: open-sans;
+  src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
 
 body {
-    font-family: itim, open-sans, system-ui, -apple-system !important;
+  font-family:
+    itim,
+    open-sans,
+    system-ui,
+    -apple-system !important;
 }
 
 // ===LOGIN AND SIGNUP PAGE===
 // ===MOBILE FIRST===
 body#login {
-    background-color: var(--light-beige);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--light-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #registration-field {
-    color: white;
-    min-height: 500px;
-    max-height: 500px;
-    max-width: 300px;
-    border: 2px solid var(--dark-green);
-    border-radius: var(--small-radius);
+  color: white;
+  min-height: 500px;
+  max-height: 500px;
+  max-width: 300px;
+  border: 2px solid var(--dark-green);
+  border-radius: var(--small-radius);
 
-    position: relative;
-    // top: 20%;
-    // right: 10%;
+  position: relative;
+  // top: 20%;
+  // right: 10%;
 }
 
 form {
-    padding-left: 2rem;
+  padding-left: 2rem;
 }
 
 h1 {
-    margin: 3rem 0 0 0 !important;
-    font-size: 2rem !important;
+  margin: 3rem 0 0 0 !important;
+  font-size: 2rem !important;
 }
 
 #welcome {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    width: 90%;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  width: 90%;
 }
 
 input:not([type='checkbox']) {
-    background: none;
+  background: none;
 
-    border: 1px solid var(--dark-green);
-    border-radius: 5px;
-    height: var(--input-height);
-    width: 90%;
+  border: 1px solid var(--dark-green);
+  border-radius: 5px;
+  height: var(--input-height);
+  width: 90%;
 
-    &::placeholder {
-        color: rgb(221, 216, 216);
-    }
+  &::placeholder {
+    color: rgb(221, 216, 216);
+  }
 
-    &:user-valid {
-        outline-color: var(--form-valid);
-        border: 2px solid var(--form-valid);
-    }
-    &:user-invalid {
-        outline-color: var(--form-invalid);
-        border: 2px solid var(--form-invalid);
-    }
+  &:user-valid {
+    outline-color: var(--form-valid);
+    border: 2px solid var(--form-valid);
+  }
+  &:user-invalid {
+    outline-color: var(--form-invalid);
+    border: 2px solid var(--form-invalid);
+  }
 }
 
-#username-criteria, #password-criteria {
-    color: rgb(233, 28, 28);
-    font-weight: 400;
+#username-criteria,
+#password-criteria {
+  color: rgb(233, 28, 28);
+  font-weight: 400;
 }
 
 #user-name {
-    margin-top: .1rem;
+  margin-top: 0.1rem;
 }
 
 input[type='checkbox'] {
-    width: 1.5rem;
-    height: 1.1rem;
-    margin: .7rem .2rem 1.1rem -.1rem !important;
-    margin-top: 1.1rem;
-    position: relative;
+  width: 1.5rem;
+  height: 1.1rem;
+  margin: 0.7rem 0.2rem 1.1rem -0.1rem !important;
+  margin-top: 1.1rem;
+  position: relative;
 
-    cursor: pointer;
+  cursor: pointer;
+}
+
+#error-placeholder {
+  position: absolute;
 }
 
 .entry-button {
-    width: 90%;
-    height: var(--input-height);
-    margin-bottom: .6rem;
-    
-    border-radius: 7px;
-    border: 1px solid var(--blue);
+  width: 90%;
+  height: var(--input-height);
+  margin-bottom: 0.6rem;
 
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-    background: linear-gradient(var(--blue), var(--light-beige));
-    
+  border-radius: 7px;
+  border: 1px solid var(--blue);
+
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: linear-gradient(var(--blue), var(--light-beige));
 }
 
 #registration-btn {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
-.page-btn, 
-#made-by a, 
+.page-btn,
+#made-by a,
 #skip-link a {
-    color: black;
-    // text-decoration: none;
-    cursor: pointer;
+  color: black;
+  // text-decoration: none;
+  cursor: pointer;
 }
 
 #or-container {
-    padding-right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .3rem;
-    margin-top: 1.3rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 1.3rem;
 
-    div {
-        width: 10rem;
-        height: 1px;
-    }
+  div {
+    width: 10rem;
+    height: 1px;
+  }
 }
 #left-line {
-    background: linear-gradient(90deg, (var(--beige)), (var(--dark-green)));
+  background: linear-gradient(90deg, (var(--beige)), (var(--dark-green)));
 }
 #right-line {
-    background: linear-gradient(90deg, (var(--dark-green)), (var(--beige)));
+  background: linear-gradient(90deg, (var(--dark-green)), (var(--beige)));
 }
 
 #skip-link {
-    text-align: center;
-    padding-right: 2rem;
-    margin: 1rem 0 2rem 0;
+  text-align: center;
+  padding-right: 2rem;
+  margin: 1rem 0 2rem 0;
 }
 
 .foreground {
@@ -167,20 +174,47 @@ input[type='checkbox'] {
   z-index: -1;
 }
 .blue-bg {
-    background-color: var(--blue);
-    opacity: .45;
+  background-color: var(--blue);
+  opacity: 0.45;
 }
 .beige-bg {
-    background-color: var(--beige);
-    opacity: .25;
+  background-color: var(--beige);
+  opacity: 0.25;
 }
 
 #made-by {
-    position: absolute;
-    bottom: 0px;
-    left: 20%;
+  position: absolute;
+  bottom: 0px;
+  left: 20%;
 }
 
-.hidden, .hidden-p {
-    display: none;
+.hidden,
+.hidden-svg {
+  display: none;
+}
+
+#error-placeholder {
+  color: var(--form-invalid);
+}
+
+#rotator-container {
+  padding-right: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.rotating-svg {
+  animation: rotate 2s infinite linear;
+  position: absolute;
+  top: 5px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
