@@ -18,6 +18,7 @@ export const domEls = {
   foreground: document.querySelector('[data-foreground]'),
 };
 
+// Toggles between two states
 function toggleClasslist(elements, cl1, cl2) {
   elements.forEach((el) => {
     el.classList.toggle(cl1);

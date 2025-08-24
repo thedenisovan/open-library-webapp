@@ -20,10 +20,22 @@ class User {
   }
 }
 
+// Adds user obj to local storage when function is called.
+export function setLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+// Turns string from local storage back to obj state.
+function parseStorageData(data) {
+  return JSON.parse(data);
+}
+
 // Object which will store instances of signin details class.
 let users;
+// Users obj retrieved from local storage.
 let retrievedUserStr = localStorage.getItem('users');
 
+// If local storage is empty create new user obj
 if (!retrievedUserStr) {
   users = new Object();
   // Initial users
@@ -38,18 +50,8 @@ if (!retrievedUserStr) {
   users = parseStorageData(retrievedUserStr);
 }
 
-// Adds user obj to local storage when function is called.
-export function setLocalStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
-}
-
-// Turns string from local storage back to obj state.
-function parseStorageData(data) {
-  return JSON.parse(data);
-}
-
-// Function which iterates trough users object retrieved from local storage,
-// and if username and password mach grand successful entry else no entry.
+/* Function which iterates trough users object retrieved from local storage,
+and if username and password mach grand successful entry else no entry. */
 export function signingIn(username, password) {
   for (let [user, pass] of Object.entries(users)) {
     if (user === username && pass === password) {
