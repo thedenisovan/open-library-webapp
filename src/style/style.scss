@@ -10,9 +10,11 @@
   --blue: #7d8d86;
   --beige: #9b6a5b;
   --brown: #613a2b;
-  --light-beige: #cbb397;
+  --ivory: #f2f2f2;
   --neon-pink: #f200ff;
+  --orange: #925305;
 }
+
 
 @font-face {
   font-family: itim;
@@ -34,14 +36,18 @@ body {
 // ===LOGIN AND SIGNUP PAGE===
 // ===MOBILE FIRST===
 body#login {
-  background-color: var(--light-beige);
+  background-color: var(--ivory);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+#welcome-field {
+  display: none;
+}
+
 #registration-field {
-  color: white;
+  color: black;
   min-height: 500px;
   max-height: 500px;
   max-width: 300px;
@@ -57,7 +63,7 @@ form {
   padding-left: 2rem;
 }
 
-h1 {
+h2 {
   margin: 3rem 0 0 0 !important;
   font-size: 2rem !important;
 }
@@ -77,7 +83,7 @@ input:not([type='checkbox']) {
   width: 90%;
 
   &::placeholder {
-    color: rgb(221, 216, 216);
+    color: rgba(0, 0, 0, 0.631);
   }
 
   &:user-valid {
@@ -122,10 +128,10 @@ input[type='checkbox'] {
   border-radius: 7px;
   border: 1px solid var(--blue);
 
-  color: white;
+  color: black;
   font-size: 1.3rem;
   cursor: pointer;
-  background: linear-gradient(var(--blue), var(--light-beige));
+  background: linear-gradient(var(--blue), var(--ivory));
 }
 
 #registration-btn {
@@ -135,7 +141,7 @@ input[type='checkbox'] {
 .page-btn,
 #made-by a,
 #skip-link a {
-  color: black;
+  color: var(--orange);
   // text-decoration: none;
   cursor: pointer;
 }
@@ -216,5 +222,33 @@ input[type='checkbox'] {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1025px) {
+  body#login {
+    position: relative;
+  }
+
+  #welcome-field {
+    left: 150px;
+    display: block;
+    position: absolute;
+    width: clamp(430px, 40vw, 45rem);
+
+    h1 {
+        line-height: 1.1;
+        font-size: clamp(2.4rem, 4vw, 3.3rem);
+      }
+    p {
+      font-size: clamp(1.4rem, 2vw, 2.3rem);
+    }
+    span {
+      color: var(--orange);
+    }
+  }
+  #registration-field {
+    position: absolute;
+    right: 10vw;
   }
 }
