@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "jsdom": "^26.1.0",
     "normalize.css": "^8.0.1",
     "react-geocode": "^2.0.1"
   }
