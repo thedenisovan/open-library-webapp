@@ -5,6 +5,7 @@ import {
   setLocalStorage,
   makeNewUser,
   getUser,
+  AllUsers
 } from './signIn.js';
 let isSignInScreen = true;
 let users = getUser();
@@ -51,7 +52,7 @@ function indexPageEventDelegation() {
       }
     } else if (target.closest('#registration-btn')) {
       makeNewUser(signinEls.username.value, signinEls.password.value);
-      setLocalStorage('users', users);
+      setLocalStorage('userData', users);
     }
   });
 }

@@ -12,7 +12,7 @@ export const signinEls = {
 };
 
 // Class which will store user signin details.
-class User {
+export class SingleUser {
   constructor(username, password, isRemembered = false) {
     this.username = username;
     this.password = password;
@@ -20,9 +20,15 @@ class User {
   }
 }
 
+class AllUsers {
+  constructor() {
+    this.users = new Map();
+  }
+}
+
 // Adds user obj to local storage when function is called.
 export function setLocalStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(key, JSON.stringify([...value]));
 }
 
 // Turns string from local storage back to obj state.
@@ -33,28 +39,29 @@ function parseStorageData(data) {
 // Object which will store instances of signin details class.
 let users;
 // Users obj retrieved from local storage.
-let retrievedUserStr = localStorage.getItem('users');
+let retrievedUserStr = localStorage.getItem('userData');
 
 // If local storage is empty create new user obj
 if (!retrievedUserStr) {
-  users = new Object();
+  users = new Map();
   // Initial users
-  const user1 = new User('jamal', '000000');
-  const user2 = new User('marquis', '111111');
-  const user3 = new User('samantha', '222222');
-  users[user1.username] = user1.password;
-  users[user2.username] = user2.password;
-  users[user3.username] = user3.password;
-  setLocalStorage('users', users);
+  users.set('jamal', '000000');
+  users.set('marquis', '111111');
+  users.set('samantha', '222222');
+  
+  setLocalStorage('userData', users);
 } else {
-  users = parseStorageData(retrievedUserStr);
+  let stored = parseStorageData(retrievedUserStr);
+  users = new Map(stored); 
 }
+
+console.log(users.set('eminem', '123123'));
 
 /* Function which iterates trough users object retrieved from local storage,
 and if username and password mach grand successful entry else no entry. */
 export function signingIn(username, password) {
-  for (let [user, pass] of Object.entries(users)) {
-    if (user === username && pass === password) {
+  for (const [user,pass] of users.entries()) {
+    if(user === username && pass === password) {
       return true;
     }
   }
@@ -63,10 +70,8 @@ export function signingIn(username, password) {
 
 // Iterates trough users obj and look if user with give user name exists or not
 function checkForExistingUser(username) {
-  for (let name of Object.keys(users)) {
-    if (name === username) {
-      return true;
-    }
+  if (users.has(username)) {
+    return true;
   }
   return false;
 }
@@ -84,8 +89,8 @@ export async function makeNewUser(username, password) {
     return null;
   }
 
-  const newUser = new User(username, password);
-  users[newUser.username] = newUser.password;
+  users.set(username, password);
+
   signinEls.rotationSvg.classList.remove('hidden-svg');
   await setTimeout(() => {
     signinEls.rotationSvg.classList.add('hidden-svg');
@@ -126,4 +131,3 @@ export function getUser() {
 }
 
 // indexPageEventDelegation();
-retrievedUserStr = localStorage.getItem('users');
