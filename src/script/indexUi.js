@@ -1,23 +1,48 @@
 import {
-  clearUserInput,
   signinEls,
-  signingIn,
-  setLocalStorage,
-  makeNewUser,
-  getUser,
   AllUsers
 } from './signIn.js';
-let isSignInScreen = true;
-let users = getUser();
 
 // DOM elements of sign index page ui changes.
-export const domEls = {
+const domEls = {
   signinPageBtn: document.querySelector('[data-signin-page]'),
   singUpPageBtn: document.querySelector('[data-signup-page]'),
   hidden: document.querySelectorAll('.hidden'),
   visible: document.querySelectorAll('.visible'),
   foreground: document.querySelector('[data-foreground]'),
 };
+
+let isSignInScreen = true;
+let usersClass;
+let users;
+// Users obj retrieved from local storage.
+let retrievedUserStr = localStorage.getItem('userData');
+
+// If local storage is empty create new user obj
+if (!retrievedUserStr) {
+  usersClass = new AllUsers();
+  users = usersClass.users;
+  // Initial users
+  users.set('jamal', '000000');
+  users.set('marquis', '111111');
+  users.set('samantha', '222222');
+  
+  setLocalStorage('userData', users);
+} else {
+  let stored = parseStorageData(retrievedUserStr);
+  usersClass = new AllUsers(stored);
+  users = usersClass.users;
+}
+
+// Adds user obj to local storage when function is called.
+function setLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify([...value]));
+}
+
+// Turns string from local storage back to obj state.
+function parseStorageData(data) {
+  return JSON.parse(data);
+}
 
 // Toggles between two states
 function toggleClasslist(elements, cl1, cl2) {
@@ -43,7 +68,7 @@ function indexPageEventDelegation() {
 
     // Event listener for sign in button click
     if (target.closest('#signin-btn')) {
-      if (signingIn(signinEls.username.value, signinEls.password.value)) {
+      if (usersClass.signingIn(signinEls.username.value, signinEls.password.value)) {
         window.location = './template.html';
         // Event listener for registration button click
       } else {
@@ -51,10 +76,23 @@ function indexPageEventDelegation() {
         clearUserInput();
       }
     } else if (target.closest('#registration-btn')) {
-      makeNewUser(signinEls.username.value, signinEls.password.value);
+      usersClass.makeNewUser(signinEls.username.value, signinEls.password.value);
       setLocalStorage('userData', users);
     }
   });
+}
+
+export async function addLoadingSvg(element) {
+  element.classList.remove('hidden-svg');
+  await setTimeout(() => {
+    element.classList.add('hidden-svg');
+    location.reload();
+  }, 1200);
+}
+
+function clearUserInput() {
+  signinEls.username.value = '';
+  signinEls.password.value = '';
 }
 
 domEls.singUpPageBtn.addEventListener('click', () => {
