@@ -40,6 +40,7 @@ function clearUserInput() {
   signinEls.password.value = '';
 }
 
+// Adds rotating svg after user had successfully registered to imitate loading
 export async function addLoadingSvg(element) {
   element.classList.remove('hidden-svg');
   await new Promise(resolve => setTimeout(resolve, 1200));
@@ -62,7 +63,7 @@ signinEls.mainField.addEventListener('click', async (event) => {
 
   if (target.closest('#signin-btn')) {
     if (usersClass.signIn(signinEls.username.value, signinEls.password.value)) {
-      window.location = './template.html';
+      window.location = './main.html';
     } else {
       signinEls.errorPlaceholder.textContent = 'Invalid username or password.';
       clearUserInput();
@@ -82,4 +83,4 @@ signinEls.mainField.addEventListener('click', async (event) => {
 
 domEls.singUpPageBtn.addEventListener('click', () => updateDisplay());
 domEls.signinPageBtn.addEventListener('click', () => updateDisplay());
-domEls.skipBtn.addEventListener('click', () => window.location = './template.html');
+domEls.skipBtn.addEventListener('click', () => window.location = './main.html');

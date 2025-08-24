@@ -67,8 +67,8 @@ body {
   transform: rotateX(90deg) translateZ(calc(var(--cubes-width) / 2));
 }
 
-#first-cube .cube {
-  animation: rotate 25s linear infinite;
+.cube {
+  animation: rot 25s linear infinite;
 }
 
 #first-cube .cube .face {
@@ -83,19 +83,19 @@ body {
   animation: negativeRotation 25s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rot {
   from {
-    transform: rotate3d(0, 0, 0, 0);
+    transform: rotate3d(0, 0, 0, 0) translateX(-25px);
   }
   to {
-    transform: rotate3d(1, 1, 0, 360deg);
+    transform: rotate3d(1, 1, 0, 360deg) translateX(-40px);
   }
 }
 @keyframes negativeRotation {
   from {
-    transform: rotate3d(0, 0, 0, 0);
+    transform: rotate3d(0, 0, 0, 0) translateX(25px);
   }
   to {
-    transform: rotate3d(1, 1, 0, -360deg);
+    transform: rotate3d(1, 1, 0, -360deg) translateX(40px);
   }
 }
