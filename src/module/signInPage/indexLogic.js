@@ -37,7 +37,11 @@ export class AllUsers {
 
   // Check login credentials
   signIn(username, password) {
-    return this.users.get(username) === password;
+    if (this.users.get(username) === password) {
+      localStorage.setItem('currActiveUsername', username);
+      return true;
+    }
+    return false;
   }
 
   // LocalStorage helpers

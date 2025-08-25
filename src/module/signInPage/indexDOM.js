@@ -68,6 +68,7 @@ signinEls.mainField.addEventListener('click', async (event) => {
       signinEls.errorPlaceholder.textContent = 'Invalid username or password.';
       clearUserInput();
     }
+    console.log(document.querySelector('[data-curr-user]'));
   }
 
   if (target.closest('#registration-btn')) {
