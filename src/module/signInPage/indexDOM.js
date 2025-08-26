@@ -56,7 +56,7 @@ function updateDisplay() {
   clearUserInput();
 }
 
-// Event handling
+// Click event handling
 signinEls.mainField.addEventListener('click', async (event) => {
   event.preventDefault();
   const target = event.target;
@@ -80,8 +80,17 @@ signinEls.mainField.addEventListener('click', async (event) => {
       signinEls.errorPlaceholder.textContent = result.errors.join(' ');
     }
   }
+
+  if (target.closest('#user-name') || target.closest('#password')) {
+    signinEls.errorPlaceholder.textContent = '';
+  }
 });
+
+
 
 domEls.singUpPageBtn.addEventListener('click', () => updateDisplay());
 domEls.signinPageBtn.addEventListener('click', () => updateDisplay());
-domEls.skipBtn.addEventListener('click', () => window.location = './main.html');
+domEls.skipBtn.addEventListener('click', () => {
+  window.location = './main.html';
+  localStorage.setItem('currActiveUsername', 'Guest');
+});
