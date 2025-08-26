@@ -24,8 +24,8 @@ module.exports = {
       chunks: ['signin'],
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
+      filename: '[name].css',
+  }),
   ],
   module: {
     rules: [

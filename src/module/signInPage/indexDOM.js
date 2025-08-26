@@ -54,6 +54,7 @@ function updateDisplay() {
   domEls.foreground.classList.toggle('beige-bg');
   domEls.foreground.classList.toggle('blue-bg');
   clearUserInput();
+  signinEls.errorPlaceholder.textContent = '';
 }
 
 // Click event handling

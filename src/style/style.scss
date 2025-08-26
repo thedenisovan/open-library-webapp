@@ -123,7 +123,7 @@ input[type='checkbox'] {
 .entry-button {
   width: 90%;
   height: var(--input-height);
-  margin-bottom: 0.6rem;
+  margin: 0 auto 1.5rem auto;
 
   border-radius: 7px;
   border: 1px solid var(--blue);
@@ -136,6 +136,11 @@ input[type='checkbox'] {
 
 #registration-btn {
   margin-top: 3rem;
+}
+
+.call {
+  text-align: center;
+  padding-right: 2rem;
 }
 
 .page-btn,
@@ -168,7 +173,7 @@ input[type='checkbox'] {
 
 #skip-link {
   text-align: center;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
   margin: 1rem 0 2rem 0;
 }
 
@@ -216,6 +221,25 @@ input[type='checkbox'] {
   top: 5px;
 }
 
+// ===MAIN PAGE MOBILE FIRST===
+body#main {
+  display: flex;
+  flex-direction: column;
+}
+#main header {
+  background-color: beige;
+  flex: .1;
+}
+#main main {
+  background-color: var(--ivory);
+  flex: .8;
+}
+#main footer {
+  background-color: beige;
+  flex: .1;
+}
+
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -250,5 +274,5 @@ input[type='checkbox'] {
   #registration-field {
     position: absolute;
     right: 10vw;
-  }
+  }  
 }
