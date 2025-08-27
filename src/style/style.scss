@@ -229,12 +229,17 @@ body#main {
 }
 #main header {
   background-color: white;
-
-  display: flex;
-  flex: .08;
-  justify-content: space-between;
-  align-items: center;
 }
+#max-width {
+  display: flex;
+  justify-content: space-between;
+  flex: .05;
+
+  max-width: 1000px;
+  margin: auto;
+}
+
+// ===HEADER AND SIDEBAR SECTION===
 
 #burger-btn {
   background-color: white;
@@ -243,11 +248,13 @@ body#main {
 }
 #main main {
   background-color: var(--ivory);
-  flex: .84;
+  flex: .94;
+  width: min(100%, 1000px);
+  margin: auto;
 }
 #main footer {
   background-color: white;
-  flex: .08;
+  flex: .06;
 }
 nav, button, a {
   color: white;
@@ -336,6 +343,38 @@ nav.visible {
   transform: translateX(0%);
 }
 
+// ===MAIN CONTENT OF THE PAGE===
+#info-container {
+  background-color: #dddddd;
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  margin: auto;
+  max-width: 100%;
+  height: 10vh;
+  min-height: 80px;
+
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    background-color: #dddddd;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+.info-child {
+  border: 1px solid;
+  width: 250px;
+  text-align: center;
+  margin: .5rem 0;
+  border-radius: 5px;
+}
+
+
 
 @keyframes rotate {
   from {
@@ -371,5 +410,17 @@ nav.visible {
   #registration-field {
     position: absolute;
     right: 10vw;
-  }  
+  }
+
+  //===MAIN FIELD SLIDES===
+  #info-container div:nth-of-type(2),  #info-container div:nth-of-type(3) {
+    display: block;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1023px){
+    //===MAIN FIELD SLIDES===
+  #info-container div:nth-of-type(2){
+    display: block;
+  }
 }

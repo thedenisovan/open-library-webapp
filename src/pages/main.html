@@ -9,10 +9,12 @@
   </head>
   <body id="main">
     <header>
-      <img src="../assets/headerLogo.jpg" width="60px" aria-hidden="true">
-      <button id="burger-btn" data-burger-btn aria-label="Sidebar menu, open sidebar">
-        <img src="../assets/burger-btn..svg"  width="40px" aria-hidden="true">
-      </button>
+      <div id="max-width">
+        <img src="../assets/headerLogo.jpg" height="50px" aria-hidden="true">
+        <button id="burger-btn" data-burger-btn aria-label="Sidebar menu, open sidebar">
+          <img src="../assets/burger-btn..svg"  width="40px" aria-hidden="true">
+        </button>
+      </div>
     </header>
     <nav data-nav>
       <section id="left-nav">
@@ -53,7 +55,30 @@
       </section>
     </nav>
     <main>
-      
+      <div id="info-container" data-info-cont>
+        <button aria-label="previous information slide" data-back-info>
+          <img width="40px" src="../assets/MainHead/previous-svgrepo-com.svg" aria-hidden="true">
+        </button>
+        <div class="info-child" data-info="0">
+          <img>
+          <p>Browse from millions of online books</p>
+        </div>
+        <div class="info-child hidden" data-info="1">
+          <img>
+          <p>Save books to your personal library</p>
+        </div>
+        <div class="info-child hidden" data-info="2">
+          <img>
+          <p>Got to open library web page to read them</p>
+        </div>
+        <div class="info-child hidden" data-info="3">
+          <img>
+          <p>Educate and become best version of your self</p>
+        </div>
+        <button aria-label="next information slide" data-next-info>
+          <img width="40px" src="../assets/MainHead/next-svgrepo-com.svg" aria-hidden="true">
+        </button>
+      </div>
     </main>
     <footer class="dark">
     </footer>
