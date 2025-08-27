@@ -30,7 +30,7 @@ if (!usersClass.users.size) {
 }
 
 // Utility functions
-function toggleClasslist(elements, cl1, cl2) {
+function toggleGroupClasslist(elements, cl1, cl2) {
   elements.forEach(el => el.classList.toggle(cl1));
   elements.forEach(el => el.classList.toggle(cl2));
 }
@@ -49,8 +49,8 @@ export async function addLoadingSvg(element) {
 }
 
 function updateDisplay() {
-  toggleClasslist(domEls.hidden, 'hidden', 'visible');
-  toggleClasslist(domEls.visible, 'hidden', 'visible');
+  toggleGroupClasslist(domEls.hidden, 'hidden', 'visible');
+  toggleGroupClasslist(domEls.visible, 'hidden', 'visible');
   domEls.foreground.classList.toggle('beige-bg');
   domEls.foreground.classList.toggle('blue-bg');
   clearUserInput();
