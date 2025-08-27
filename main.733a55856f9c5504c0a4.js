@@ -1,1 +1,0 @@
-(()=>{"use strict";!async function(t,a){a=a?`&author=${a}`:"";try{const t=`https://openlibrary.org/search.json?&lang=en&title=Fantastic four${a}&sort=old&fields=author_name,cover_i,ebook_access,first_publish_year,title`,s=await fetch(t);return(await s.json()).docs}catch{}}()})();
