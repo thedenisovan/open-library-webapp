@@ -14,25 +14,28 @@
         <img src="../assets/burger-btn..svg"  width="40px" aria-hidden="true">
       </button>
     </header>
-    <nav data-nav class="invisible">
-      <div id="logo-section">
+    <nav data-nav>
+      <section id="left-nav">
+        <div id="logo-section">
         <!-- <img> -->
         <h1>Sandpaper Library</h1>
-        <button data-close-nav aria-label="close sidebar">
-          <img src="../assets/close.svg" width="30" aria-hidden>
-        </button>
       </div>
       <button data-trending-books aria-label="Go to trending book page">Trending books</button>
       <button data-search-book aria-label="Go to search page">Search book</button>
       <button data-my-books aria-label="Go my saved books page">My books</button>
-      <p id="curr-user" data-curr-user aria-label="Current user name"></p>
+      <p id="curr-user" data-curr-user aria-label="Current user name" tabindex="0"></p>
       <button data-signout aria-label="Sign out of the profile">Sign out</button>
+      </section>
+      <section data-right-nav id="right-nav">
+        <button data-close-nav aria-label="close sidebar">
+          <img src="../assets/close.svg" width="30" aria-hidden>
+        </button>
+      </section>
     </nav>
     <main>
 
     </main>
     <footer class="dark">
-      <a href="./index.html">Go back</a>
     </footer>
   </body>
 </html>
