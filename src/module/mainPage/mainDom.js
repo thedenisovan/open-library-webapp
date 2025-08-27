@@ -1,6 +1,9 @@
 const els = {
-  navbar: document.querySelector('[data-nav]')
+  navbar: document.querySelector('[data-nav]'),
+  currUsername: document.querySelector('[data-curr-user]'),
 }
+
+els.currUsername.textContent = localStorage.getItem('currActiveUsername');
 
 // Helper DOM functions
 function toggleSingleClass(el, cl) {
@@ -14,6 +17,7 @@ function bindHeaderEvents() {
   body.addEventListener('click', (event) => {
     const target = event.target;
 
+    // Event of closing and opening side bar
     if (
         target.closest('[data-burger-btn]') || 
         target.closest('[data-close-nav]')  || 
@@ -24,18 +28,4 @@ function bindHeaderEvents() {
   });
 }
 
-// Attach event listener to nav
-function bindNavEvents() {
-  const navbar = document.querySelector('[data-nav]');
-
-  navbar.addEventListener('click', (event) => {
-    const target = event.target;
-
-    if (target.closest('[data-close-nav]')) {
-      toggleSingleClass(els.navbar, 'visible');
-    }
-  });
-}
-
-// bindNavEvents();
 bindHeaderEvents();
