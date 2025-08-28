@@ -347,16 +347,15 @@ nav.visible {
 // ===MAIN CONTENT OF THE PAGE===
 
 .glide__track {
-  // width: 77%;
   margin: auto;
 }
 
-.glide {
+.glide, .glide2 {
   background-color: #dddddd;
   border: 1px solid gray;
   border-radius: 5px;
 
-  padding: .5rem 0;
+  padding: .5rem 1rem;
   height: 10vh;
   min-height: 80px;
 
@@ -374,6 +373,11 @@ nav.visible {
 }
 .glide__arrow {
   background-color: rgba(128, 128, 128, 0.635) !important;
+}
+
+.book-genre.book-genre {
+  font-size: 1.6rem !important;
+  margin-top: .5rem !important;
 }
 
 @keyframes rotate {

@@ -1,5 +1,5 @@
 const desiredFields =
-  '&fields=author_name,cover_i,ebook_access,first_publish_year,title,key';
+  '&fields=author_name,cover_i,ebook_access,first_publish_year,title,key,cover_edition_key';
 
 // Function which will get api data if author and title is provided or if only title is provided
 export async function processBook(bookTitle, authorName) {
@@ -7,11 +7,11 @@ export async function processBook(bookTitle, authorName) {
   !authorName ? (authorName = '') : (authorName = `&author=${authorName}`);
 
   try {
-    const url = `https://openlibrary.org/search.json?&title=${bookTitle}${authorName}&sort=old${desiredFields}`;
+    const url = `https://openlibrary.org/search.json?&title=${bookTitle}${authorName}&${desiredFields}`;
     const response = await fetch(url);
     const data = await response.json();
 
-    return data.docs;
+    return console.log(data.docs);
   } catch {
     return false;
   }
@@ -29,3 +29,5 @@ export async function processBookAuthor(authorName) {
     return false;
   }
 }
+
+processBook('1984');

@@ -1,4 +1,4 @@
-let frontSlideIdx = 0;
+import {makeBookShelf} from './bookSlideConstructor.js';
 
 const els = {
   navbar: document.querySelector('[data-nav]'),
@@ -31,5 +31,3 @@ function bindHeaderEvents() {
 }
 
 bindHeaderEvents();
-
-// TODO: Add functionality witch will look on current screen size and scroll slides based on it
