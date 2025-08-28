@@ -262,6 +262,7 @@ nav, button, a {
 nav {
   position: fixed;
   display: flex;
+   z-index: 5;
 
   height: 100%;
   width: 100%;
@@ -344,40 +345,35 @@ nav.visible {
 }
 
 // ===MAIN CONTENT OF THE PAGE===
-#info-container {
+
+.glide__track {
+  // width: 77%;
+  margin: auto;
+}
+
+.glide {
   background-color: #dddddd;
   border: 1px solid gray;
   border-radius: 5px;
 
-  margin: auto;
-  max-width: 100%;
+  padding: .5rem 0;
   height: 10vh;
   min-height: 80px;
 
   display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-
-  button {
-    border: none;
-    background-color: #dddddd;
-
-    img {
-      cursor: pointer;
-    }
-  }
 }
-.info-child {
+.glide__slide {
+  background-color: whitesmoke;
   border: 1px solid;
-  width: 250px;
   text-align: center;
-  margin: .5rem 0;
   border-radius: 5px;
 
   display: flex;
   align-items: center;
-
-  // transform: translateX(100%);
+  height: 9vh !important;
+}
+.glide__arrow {
+  background-color: rgba(128, 128, 128, 0.635) !important;
 }
 
 @keyframes rotate {
@@ -415,16 +411,5 @@ nav.visible {
     position: absolute;
     right: 10vw;
   }
-
-  //===MAIN FIELD SLIDES===
-  #info-container div:nth-of-type(2),  #info-container div:nth-of-type(3) {
-    display: block !important;
-  }
 }
 
-@media (min-width: 700px) and (max-width: 1023px){
-    //===MAIN FIELD SLIDES===
-  #info-container div:nth-of-type(2){
-    display: block !important;
-  }
-}
