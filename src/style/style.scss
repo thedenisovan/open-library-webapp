@@ -202,7 +202,7 @@ input[type='checkbox'] {
 
 .hidden,
 .hidden-svg {
-  display: none;
+  display: none !important;
 }
 
 #error-placeholder {
@@ -356,6 +356,7 @@ nav.visible {
 
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   button {
     border: none;
@@ -372,9 +373,12 @@ nav.visible {
   text-align: center;
   margin: .5rem 0;
   border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+
+  // transform: translateX(100%);
 }
-
-
 
 @keyframes rotate {
   from {
@@ -414,13 +418,13 @@ nav.visible {
 
   //===MAIN FIELD SLIDES===
   #info-container div:nth-of-type(2),  #info-container div:nth-of-type(3) {
-    display: block;
+    display: block !important;
   }
 }
 
 @media (min-width: 700px) and (max-width: 1023px){
     //===MAIN FIELD SLIDES===
   #info-container div:nth-of-type(2){
-    display: block;
+    display: block !important;
   }
 }
