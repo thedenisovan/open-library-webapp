@@ -1,5 +1,3 @@
-import { makeBookShelf, fillBookData, displayBookCover } from './bookSlideConstructor.js';
-
 const els = {
   navbar: document.querySelector('[data-nav]'),
   currUsername: document.querySelector('[data-curr-user]'),
@@ -30,8 +28,4 @@ function bindHeaderEvents() {
   });
 }
 
-makeBookShelf(10, '.glide2 .glide__track .glide__slides');
-displayBookCover('harry potter', '', 0);
-displayBookCover('twilight', '', 1);
-displayBookCover('lord of the rings', '', 2);
 bindHeaderEvents();

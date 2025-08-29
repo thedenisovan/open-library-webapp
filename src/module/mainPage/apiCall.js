@@ -11,10 +11,9 @@ export async function processBook(bookTitle, authorName) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(data.docs);
     return data.docs;
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -27,8 +26,6 @@ export async function processBookAuthor(authorName) {
 
     return data.docs;
   } catch {
-    return false;
+    return null;
   }
 }
-
-processBook('1984', 'George');

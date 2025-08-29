@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const glide1 = new Glide('.glide', options1);
   const glide2 = new Glide('.glide2', options2);
+  const glide3 = new Glide('.glide3', options2);
 
   glide1.mount();
   glide2.mount();
+  glide3.mount();
 
   // glide1.update();
   // glide2.update();
