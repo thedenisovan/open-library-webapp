@@ -23,7 +23,8 @@ export class AllUsers {
     const errors = [];
     if (username.length < 4) errors.push('Username must be at least 4 chars.');
     if (password.length < 6) errors.push('Password must be at least 6 chars.');
-    if (this.checkForExistingUser(username)) errors.push('Username not available.');
+    if (this.checkForExistingUser(username))
+      errors.push('Username not available.');
     return errors;
   }
 

@@ -3,39 +3,36 @@ import '@glidejs/glide/dist/css/glide.core.min.css';
 import '@glidejs/glide/dist/css/glide.theme.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const glide = new Glide('.glide', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 3,
-  breakpoints: {
-    1024: {
-      perView: 2
+  const options1 = {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    breakpoints: {
+      1024: { perView: 2 },
+      600: { perView: 1 },
     },
-    600: {
-      perView: 1
-    }
-  },
-  gap: 15,
-  autoplay: 3000
-});
+    gap: 45,
+    autoplay: 3000,
+  };
 
-  glide.mount();
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const glide = new Glide('.glide2', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 8,
-  breakpoints: {
-    1024: {
-      perView: 7
+  const options2 = {
+    type: 'slider',
+    startAt: 0,
+    perView: 8,
+    breakpoints: {
+      1024: { perView: 6 },
+      600: { perView: 4 },
     },
-    600: {
-      perView: 4
-    }
-  },
-  gap: 15,
-});
+    gap: 15,
+    bound: true
+  };
 
-  glide.mount();
+  const glide1 = new Glide('.glide', options1);
+  const glide2 = new Glide('.glide2', options2);
+
+  glide1.mount();
+  glide2.mount();
+
+  // glide1.update();
+  // glide2.update();
 });

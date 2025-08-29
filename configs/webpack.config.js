@@ -25,12 +25,12 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-  }),
+    }),
   ],
   module: {
     rules: [
       { test: /\.html$/i, loader: 'html-loader' },
-      { 
+      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },

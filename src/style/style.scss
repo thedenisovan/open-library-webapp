@@ -16,7 +16,6 @@
   --orange: #925305;
 }
 
-
 @font-face {
   font-family: itim;
   src: url(../assets/Itim/Itim-Regular.ttf);
@@ -233,7 +232,7 @@ body#main {
 #max-width {
   display: flex;
   justify-content: space-between;
-  flex: .05;
+  flex: 0.05;
 
   max-width: 1000px;
   margin: auto;
@@ -248,27 +247,29 @@ body#main {
 }
 #main main {
   background-color: var(--ivory);
-  flex: .94;
+  flex: 0.94;
   width: min(100%, 1000px);
   margin: auto;
 }
 #main footer {
   background-color: white;
-  flex: .06;
+  flex: 0.06;
 }
-nav, button, a {
+nav,
+button,
+a {
   color: white;
 }
 nav {
   position: fixed;
   display: flex;
-   z-index: 5;
+  z-index: 5;
 
   height: 100%;
   width: 100%;
 
   transform: translateX(-100%);
-  transition: transform .4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 
   h1 {
     margin-bottom: 0px;
@@ -282,7 +283,7 @@ nav {
 
   width: 80%;
   background-color: var(--blue);
-  padding: 0px .5rem;
+  padding: 0px 0.5rem;
 
   button {
     background-color: var(--blue);
@@ -295,9 +296,10 @@ nav {
     }
   }
 
-  a, button {
+  a,
+  button {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     font-size: 1.5rem;
     text-decoration: none;
   }
@@ -305,7 +307,7 @@ nav {
 
 #curr-user-container {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
 
   &:hover {
     background-color: var(--light-blue);
@@ -350,12 +352,12 @@ nav.visible {
   margin: auto;
 }
 
-.glide, .glide2 {
+.glide {
   background-color: #dddddd;
   border: 1px solid gray;
   border-radius: 5px;
 
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   height: 10vh;
   min-height: 80px;
 
@@ -367,6 +369,9 @@ nav.visible {
   text-align: center;
   border-radius: 5px;
 
+  min-width: 100px; /* or % */
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   height: 9vh !important;
@@ -377,7 +382,7 @@ nav.visible {
 
 .book-genre.book-genre {
   font-size: 1.6rem !important;
-  margin-top: .5rem !important;
+  margin-top: 0.5rem !important;
 }
 
 @keyframes rotate {
@@ -401,9 +406,9 @@ nav.visible {
     width: clamp(430px, 40vw, 45rem);
 
     h1 {
-        line-height: 1.1;
-        font-size: clamp(2.4rem, 4vw, 3.3rem);
-      }
+      line-height: 1.1;
+      font-size: clamp(2.4rem, 4vw, 3.3rem);
+    }
     p {
       font-size: clamp(1.4rem, 2vw, 2.3rem);
     }
@@ -416,4 +421,3 @@ nav.visible {
     right: 10vw;
   }
 }
-

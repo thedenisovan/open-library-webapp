@@ -17,7 +17,7 @@ const domEls = {
   hidden: document.querySelectorAll('.hidden'),
   visible: document.querySelectorAll('.visible'),
   foreground: document.querySelector('[data-foreground]'),
-  skipBtn: document.querySelector('[data-skip-registration]')
+  skipBtn: document.querySelector('[data-skip-registration]'),
 };
 
 // Load or initialize users
@@ -31,8 +31,8 @@ if (!usersClass.users.size) {
 
 // Utility functions
 function toggleGroupClasslist(elements, cl1, cl2) {
-  elements.forEach(el => el.classList.toggle(cl1));
-  elements.forEach(el => el.classList.toggle(cl2));
+  elements.forEach((el) => el.classList.toggle(cl1));
+  elements.forEach((el) => el.classList.toggle(cl2));
 }
 
 function clearUserInput() {
@@ -43,7 +43,7 @@ function clearUserInput() {
 // Adds rotating svg after user had successfully registered to imitate loading
 export async function addLoadingSvg(element) {
   element.classList.remove('hidden-svg');
-  await new Promise(resolve => setTimeout(resolve, 1200));
+  await new Promise((resolve) => setTimeout(resolve, 1200));
   element.classList.add('hidden-svg');
   location.reload();
 }
@@ -73,7 +73,10 @@ signinEls.mainField.addEventListener('click', async (event) => {
   }
 
   if (target.closest('#registration-btn')) {
-    const result = usersClass.addUser(signinEls.username.value, signinEls.password.value);
+    const result = usersClass.addUser(
+      signinEls.username.value,
+      signinEls.password.value
+    );
     if (result.success) {
       addLoadingSvg(signinEls.rotationSvg);
       usersClass.saveToStorage('userData');
@@ -86,8 +89,6 @@ signinEls.mainField.addEventListener('click', async (event) => {
     signinEls.errorPlaceholder.textContent = '';
   }
 });
-
-
 
 domEls.singUpPageBtn.addEventListener('click', () => updateDisplay());
 domEls.signinPageBtn.addEventListener('click', () => updateDisplay());
