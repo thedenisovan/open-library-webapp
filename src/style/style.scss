@@ -25,12 +25,17 @@
   src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   font-family:
     itim,
     open-sans,
     system-ui,
     -apple-system !important;
+  height: 100%;
 }
 
 // ===LOGIN AND SIGNUP PAGE===
@@ -225,6 +230,9 @@ input[type='checkbox'] {
 body#main {
   display: flex;
   flex-direction: column;
+  background-color: var(--blue);
+
+  // height: 100vh;
 }
 #main header {
   background-color: white;
@@ -232,13 +240,17 @@ body#main {
 #max-width {
   display: flex;
   justify-content: space-between;
-  flex: 0.05;
 
   max-width: 1000px;
   margin: auto;
 }
 
 // ===HEADER AND SIDEBAR SECTION===
+
+#header-btn-container {
+  
+  display: none;
+}
 
 #burger-btn {
   background-color: white;
@@ -247,13 +259,16 @@ body#main {
 }
 #main main {
   background-color: var(--ivory);
-  flex: 0.94;
+
   width: min(100%, 1000px);
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 0 1.5rem 0;
+  height: 100vh;
+  
 }
 #main footer {
   background-color: white;
-  flex: 0.06;
+  min-height: 100px;
 }
 nav,
 button,
@@ -348,18 +363,24 @@ nav.visible {
 
 // ===MAIN CONTENT OF THE PAGE===
 
+#book-collection {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: -1rem 1rem;
+}
+
 .glide__track {
   margin: auto;
 }
 
 .glide {
   background-color: #dddddd;
-  border: 1px solid gray;
   border-radius: 5px;
 
   padding: 0.5rem 1rem;
-  height: 10vh;
-  min-height: 80px;
+  min-height: 100px;
 
   display: flex;
 }
@@ -374,15 +395,26 @@ nav.visible {
 
   display: flex;
   align-items: center;
-  height: 9vh !important;
+  height: clamp(7rem, 9vh, 10rem);
+
+  cursor: pointer;
 }
 .glide__arrow {
-  background-color: rgba(128, 128, 128, 0.635) !important;
+  background-color: none !important;
+  border: none;
+
+  img {
+    width: 50px;
+  }
 }
 
 .book-genre.book-genre {
   font-size: 1.6rem !important;
   margin-top: 0.5rem !important;
+}
+
+.rotate {
+  animation: 2s rotate ease-in-out infinite;
 }
 
 @keyframes rotate {
@@ -392,6 +424,39 @@ nav.visible {
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (min-width: 600px) {
+  #max-width {
+    & > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  #burger-btn {
+    display: none;
+  }
+
+  #header-btn-container {
+  display: flex;
+  align-items: end;
+  gap: 2rem;
+
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+
+  button, a {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
 }
 
 @media (min-width: 1025px) {
@@ -419,5 +484,9 @@ nav.visible {
   #registration-field {
     position: absolute;
     right: 10vw;
+  }
+
+  .glide__slide {
+    height: 8.5rem;
   }
 }

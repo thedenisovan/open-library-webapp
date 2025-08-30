@@ -1,6 +1,10 @@
 import { bookLibrary } from './bookClass.js';
+const loadingSvg = require('../../assets/loading-svgrepo-com.svg');
 
-// TODO: refactor function to create full html glide not just part of it
+const els = {
+  bookCover: document.querySelector
+}
+
 // Makes html containers for each book
 export function makeBookShelf(shelfLength, bookShelf) {
   if (!shelfLength || !bookShelf) return null;
@@ -18,17 +22,34 @@ export function makeBookShelf(shelfLength, bookShelf) {
     shelf.appendChild(book);
   }
 }
-makeBookShelf(10, '.glide2 .glide__track .glide__slides');
-makeBookShelf(10, '.glide3 .glide__track .glide__slides');
 
 async function displayCovers(glideIdx, books) {
+  displayRotationSvg(glideIdx)
   for (let i = 0; i < books.length; i++) {
     const book = books[i];
-    const url = await book.getCoverUrl();
     const slide = document.querySelector(`.glide${glideIdx} .glide__track .glide__slides #book${i} img`);
+    const url = await book.getCoverUrl();
+    
+    slide.classList.remove('rotate');
     slide.setAttribute('src', url);
+    slide.setAttribute('alt', book.title);
   }
 }
 
+function displayRotationSvg(glideIdx) {
+  document.querySelectorAll(`.glide${glideIdx} .glide__track .glide__slides .glide__slide img`)
+    .forEach((cover) => {
+      cover.setAttribute('src', loadingSvg);
+      cover.classList.add('rotate');
+    });
+}
+
+makeBookShelf(10, '.glide2 .glide__track .glide__slides');
+makeBookShelf(10, '.glide3 .glide__track .glide__slides');
+makeBookShelf(10, '.glide4 .glide__track .glide__slides');
+makeBookShelf(10, '.glide5 .glide__track .glide__slides');
+
 displayCovers(2, bookLibrary.trendingBooks);
 displayCovers(3, bookLibrary.classicBooks);
+displayCovers(4, bookLibrary.educationalBooks);
+displayCovers(5, bookLibrary.kidBooks);
