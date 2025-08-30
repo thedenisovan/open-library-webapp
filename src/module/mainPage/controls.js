@@ -1,9 +1,6 @@
 const els = {
   navbar: document.querySelector('[data-nav]'),
-  currUsername: document.querySelector('[data-curr-user]'),
 };
-
-els.currUsername.textContent = localStorage.getItem('currActiveUsername');
 
 // Helper DOM functions
 function toggleSingleClass(el, cl) {

@@ -17,6 +17,13 @@
           <button class="inactive">Search</button>
           <button class="inactive">My library</button>
           <a href="./index.html" class="inactive">Sing out</a>
+          <p
+            class="curr-user"
+            data-curr-user
+            aria-label="Current user name"
+            tabindex="0"
+          ></p>
+        </div>
         
         <button
           id="burger-btn"
@@ -83,7 +90,7 @@
             width="30"
           />
           <p
-            id="curr-user"
+            class="curr-user"
             data-curr-user
             aria-label="Current user name"
             tabindex="0"
@@ -215,6 +222,29 @@
         <div id="kids-books">
           <h2 class="book-genre">Children Books</h2>
           <div class="glide glide5">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides"></ul>
+              <div class="glide__arrows" data-glide-el="controls">
+                <button
+                  class="glide__arrow glide__arrow--left"
+                  data-glide-dir="<"
+                >
+                  <img src="../assets/MainHead/previous-svgrepo-com.svg">
+                </button>
+                <button
+                  class="glide__arrow glide__arrow--right"
+                  data-glide-dir=">"
+                >
+                  <img src="../assets/MainHead/next-svgrepo-com.svg">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="kids-books">
+          <h2 class="book-genre">Horror Books</h2>
+          <div class="glide glide6">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides"></ul>
               <div class="glide__arrows" data-glide-el="controls">

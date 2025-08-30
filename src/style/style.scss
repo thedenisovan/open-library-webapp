@@ -328,7 +328,7 @@ nav {
     background-color: var(--light-blue);
   }
 }
-#curr-user {
+.curr-user {
   font-size: 1.5rem;
   color: var(--dark-green);
 }
@@ -374,6 +374,8 @@ nav.visible {
 .glide__track {
   margin: auto;
 }
+
+curr-user
 
 .glide {
   background-color: #dddddd;
@@ -426,7 +428,7 @@ nav.visible {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   #max-width {
     & > img {
       width: 100px;

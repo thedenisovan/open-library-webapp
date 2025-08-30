@@ -2,7 +2,7 @@ import { bookLibrary } from './bookClass.js';
 const loadingSvg = require('../../assets/loading-svgrepo-com.svg');
 
 const els = {
-  bookCover: document.querySelector
+  currUser: document.querySelectorAll('.curr-user')
 }
 
 // Makes html containers for each book
@@ -33,6 +33,7 @@ async function displayCovers(glideIdx, books) {
     slide.classList.remove('rotate');
     slide.setAttribute('src', url);
     slide.setAttribute('alt', book.title);
+    slide.setAttribute('tabindex', '0');
   }
 }
 
@@ -44,12 +45,18 @@ function displayRotationSvg(glideIdx) {
     });
 }
 
+els.currUser.forEach((user) => {
+  user.textContent = localStorage.getItem('currActiveUsername');
+})
+
 makeBookShelf(10, '.glide2 .glide__track .glide__slides');
 makeBookShelf(10, '.glide3 .glide__track .glide__slides');
 makeBookShelf(10, '.glide4 .glide__track .glide__slides');
 makeBookShelf(10, '.glide5 .glide__track .glide__slides');
+makeBookShelf(10, '.glide6 .glide__track .glide__slides');
 
 displayCovers(2, bookLibrary.trendingBooks);
 displayCovers(3, bookLibrary.classicBooks);
 displayCovers(4, bookLibrary.educationalBooks);
 displayCovers(5, bookLibrary.kidBooks);
+displayCovers(6, bookLibrary.horrorBooks);

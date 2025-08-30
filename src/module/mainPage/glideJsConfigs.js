@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const glide3 = new Glide('.glide3', options2);
   const glide4 = new Glide('.glide4', options2);
   const glide5 = new Glide('.glide5', options2);
+  const glide6 = new Glide('.glide6', options2);
 
   glide1.mount();
   glide2.mount();
   glide3.mount();
   glide4.mount();
   glide5.mount();
+  glide6.mount();
 
-  // glide1.update();
-  // glide2.update();
 });
