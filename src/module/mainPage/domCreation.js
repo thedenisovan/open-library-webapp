@@ -20,7 +20,7 @@ export function makeBookShelf(shelfLength, bookShelf) {
 }
 
 async function displayCovers(glideIdx, books) {
-  displayRotationSvg(glideIdx)
+  displayRotationSvg(glideIdx);
   for (let i = 0; i < books.length; i++) {
     const book = books[i];
     const slide = document.querySelector(`.glide${glideIdx} .glide__track .glide__slides #book${i} img`);

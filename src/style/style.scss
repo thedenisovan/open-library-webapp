@@ -3,7 +3,7 @@
   --input-height: 2rem;
 
   --form-valid: rgba(20, 126, 20, 0.447);
-  --form-invalid: rgba(216, 33, 33, 0.986);
+  --form-invalid: rgba(216, 33, 33, 0.87);
 
   --dark-green: #4b4d26;
   --light-gree: #80916d;
@@ -22,7 +22,7 @@
 @font-face {
   font-family: open-sans;
   src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
-}
+} 
 
 html, body {
   margin: 0;
@@ -464,6 +464,54 @@ nav.visible {
 #search-divider {
   width: 93%;
   margin: auto;
+}
+#search-error {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--form-invalid);
+  height: 2rem;
+}
+
+#book-panel {
+  display: flex;
+  margin: 0 8%;
+  gap: 4vw;
+  padding: 1rem;
+  
+
+  #search-cover {
+    width: max(65%, 200px);
+    cursor: pointer;
+    transition: .2s transform;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+#search-detail {
+// background-color: rgba(128, 128, 128, 0.26);
+}
+
+#search-title {
+  font-size: clamp(1rem, 5vw, 40px);
+}
+#search-author {
+  color: darkslategray;
+  font-size: clamp(1.5rem, 2.5vw, 30px);
+}
+
+#search-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  width: 100%;
+
+  img {
+    width: 15%;
+  }
 }
 
 /* ==========================

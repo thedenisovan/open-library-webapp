@@ -123,6 +123,8 @@
         <button type="button" aria-label="search-book" data-search>Search</button>
       </form>
       <hr id="search-divider">
+      <div data-search-err id="search-error"></div>
+      
       <section id="book-panel">
         <img id="search-cover" data-cover aria-hidden="true">
         <div id="search-detail">
@@ -131,6 +133,9 @@
           <p id="search-desc" data-desc></p>
         </div>
       </section>
+      <div id="search-loading" class="hidden" data-loader>
+          <img src="../assets/loading.svg" class="rotate">
+      </div>
     </main>
     <footer></footer>
   </body>

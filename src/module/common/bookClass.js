@@ -38,17 +38,16 @@ export class Book {
     if (!data) return null;
 
     const {
-      author_name: name, 
-      cover_edition_key: cover, 
-      ebook_access: access, 
-      first_publish_year: publishYear, 
-      key, 
-      title
+      author_name: name = null,  
+      ebook_access: access = null, 
+      first_publish_year: publishYear = null, 
+      key = null, 
+      title = null
     } = data[0];
 
     return {
-      name, 
-      cover, 
+      name,
+      cover: await this.getCoverUrl(), 
       access, 
       publishYear, 
       key, 
