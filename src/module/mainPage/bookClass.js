@@ -1,4 +1,4 @@
-import { processBook, processBookAuthor } from "./apiCall.js";
+import { processBook, processBookAuthor } from "../common/apiCall.js";
 
 const backupCover = require('../../assets/book-not-found.png');
 

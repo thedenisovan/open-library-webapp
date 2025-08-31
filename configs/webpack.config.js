@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     signin: './src/module/signInPage/index.js',
     main: './src/module/mainPage/index.js',
+    search: './src/module/searchPage/index.js',
   },
   output: {
     filename: '[name].js',
@@ -22,6 +23,11 @@ module.exports = {
       filename: 'index.html',
       template: './src/pages/signin.html',
       chunks: ['signin'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'search.html',
+      template: './src/pages/search.html',
+      chunks: ['search'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <base href="/"> -->
+    <title>Sandpaper</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/book-favicon.svg" />
+  </head>
+  <body id="main">
+    <header>
+      <div id="max-width">
+        <img src="../assets/headerLogo.jpg" height="50px" aria-hidden="true" />
+
+        <div id="header-btn-container">
+          <a class="inactive" href="./main.html">Trending books</a>
+          <a href="" class="active">Search</a>
+          <button class="inactive">My library</button>
+          <a href="./index.html" class="inactive">Sing out</a>
+          <p
+            class="curr-user"
+            data-curr-user
+            aria-label="Current user name"
+            tabindex="0"
+          ></p>
+        </div>
+        
+        <button
+          id="burger-btn"
+          data-burger-btn
+          aria-label="Sidebar menu, open sidebar"
+        >
+          <img
+            src="../assets/burger-btn..svg"
+            width="40px"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+    </header>
+    <nav data-nav>
+      <section id="left-nav">
+        <h1>Sandpaper Library</h1>
+
+        <button
+          data-trending-books
+          aria-label="Go to trending book page"
+          class="inactive"
+        >
+          <img
+            src="../assets/NavSvg/trending-up-svgrepo-com.svg"
+            aria-hidden="true"
+            width="30"
+          />
+          <p>Trending books</p>
+        </button>
+
+        <button
+          data-search-book
+          aria-label="Go to search page"
+          class="active"
+        >
+          <img
+            src="../assets/NavSvg/search-svgrepo-com.svg"
+            aria-hidden="true"
+            width="30"
+          />
+          <p>Search book</p>
+        </button>
+
+        <button
+          data-my-books
+          aria-label="Go my saved books page"
+          class="inactive"
+        >
+          <img
+            src="../assets/NavSvg/book-user-svgrepo-com.svg"
+            aria-hidden="true"
+            width="30"
+          />
+          <p>My books</p>
+        </button>
+
+        <hr />
+
+        <div id="curr-user-container" class="inactive">
+          <img
+            src="../assets/NavSvg/user-svgrepo-com.svg"
+            aria-hidden="true"
+            width="30"
+          />
+          <p
+            class="curr-user"
+            data-curr-user
+            aria-label="Current user name"
+            tabindex="0"
+          ></p>
+        </div>
+
+        <a href="./index.html" class="inactive">
+          <img
+            src="../assets/NavSvg/signout-svgrepo-com.svg"
+            aria-hidden="true"
+            width="30"
+          />
+          <p>Sing out</p>
+        </a>
+      </section>
+      <section id="right-nav">
+        <button data-close-nav aria-label="close sidebar">
+          <img src="../assets/close.svg" width="20" aria-hidden />
+        </button>
+      </section>
+    </nav>
+    <main>
+    </main>
+    <footer></footer>
+  </body>
+</html>

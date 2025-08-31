@@ -1,10 +1,6 @@
 import { bookLibrary } from './bookClass.js';
 const loadingSvg = require('../../assets/loading-svgrepo-com.svg');
 
-const els = {
-  currUser: document.querySelectorAll('.curr-user')
-}
-
 // Makes html containers for each book
 export function makeBookShelf(shelfLength, bookShelf) {
   if (!shelfLength || !bookShelf) return null;
@@ -44,10 +40,6 @@ function displayRotationSvg(glideIdx) {
       cover.classList.add('rotate');
     });
 }
-
-els.currUser.forEach((user) => {
-  user.textContent = localStorage.getItem('currActiveUsername');
-})
 
 makeBookShelf(10, '.glide2 .glide__track .glide__slides');
 makeBookShelf(10, '.glide3 .glide__track .glide__slides');

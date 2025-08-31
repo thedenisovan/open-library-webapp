@@ -1,5 +1,5 @@
-import './apiCall.js';
-import './controls.js';
+import '../common/apiCall.js';
+import '../common/navControls.js';
 import './glideJsConfigs.js';
 import './domCreation.js';
 import './bookClass.js';
