@@ -118,13 +118,18 @@
         <h1>Find your next favorite book</h1>
       </section>
       <form action="" id="search-form">
-        <input type="text" placeholder="Title" aria-label="Books title">
-        <input type="text" placeholder="Author" aria-label="Books author">
-        <button type="button" aria-label="search-book">Search</button>
+        <input data-title-inp type="text" placeholder="Title" aria-label="Books title">
+        <input data-author-inp type="text" placeholder="Author" aria-label="Books author">
+        <button type="button" aria-label="search-book" data-search>Search</button>
       </form>
       <hr id="search-divider">
-      <section>
-        
+      <section id="book-panel">
+        <img id="search-cover" data-cover aria-hidden="true">
+        <div id="search-detail">
+          <p id="search-title" data-title></p>
+          <p id="search-author" data-author></p>
+          <p id="search-desc" data-desc></p>
+        </div>
       </section>
     </main>
     <footer></footer>

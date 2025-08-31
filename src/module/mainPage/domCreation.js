@@ -1,4 +1,4 @@
-import { bookLibrary } from './bookClass.js';
+import { bookLibrary } from '../common/bookClass';
 const loadingSvg = require('../../assets/loading-svgrepo-com.svg');
 
 // Makes html containers for each book

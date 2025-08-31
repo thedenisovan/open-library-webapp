@@ -4,3 +4,4 @@ import '../../style/style.scss';
 import '../../style/cssUtils/cube.css';
 
 import '../common/navControls.js'
+import '../searchPage/controls.js'

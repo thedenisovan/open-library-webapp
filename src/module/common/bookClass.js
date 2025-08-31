@@ -1,4 +1,4 @@
-import { processBook, processBookAuthor } from "../common/apiCall.js";
+import { processBook, processBookAuthor } from "./apiCall.js";
 
 const backupCover = require('../../assets/book-not-found.png');
 
@@ -30,6 +30,30 @@ export class Book {
   async getCoverUrl() {
     const coverId = await this.#getCoverId();
     return coverId ? `https://covers.openlibrary.org/b/olid/${coverId}-M.jpg` : backupCover;
+  }
+
+  // Extracts books data from api call
+  async getBookData() {
+    const data = await this.#bookDataValidation(this.title, this.author);
+    if (!data) return null;
+
+    const {
+      author_name: name, 
+      cover_edition_key: cover, 
+      ebook_access: access, 
+      first_publish_year: publishYear, 
+      key, 
+      title
+    } = data[0];
+
+    return {
+      name, 
+      cover, 
+      access, 
+      publishYear, 
+      key, 
+      title
+    }
   }
 }
 
