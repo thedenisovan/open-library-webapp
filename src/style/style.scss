@@ -12,7 +12,6 @@
   --beige: #9b6a5b;
   --brown: #613a2b;
   --ivory: #f2f2f2;
-  --neon-pink: #f200ff;
   --orange: #925305;
 }
 
@@ -28,7 +27,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;      /* body fills viewport */
+  height: 100%;
 }
 
 body {
@@ -39,8 +38,9 @@ body {
     -apple-system !important;
 }
 
-// ===LOGIN AND SIGNUP PAGE===
-// ===MOBILE FIRST===
+/* ==========================
+  Sign up page
+========================== */
 body#login {
   background-color: var(--ivory);
   display: flex;
@@ -61,8 +61,6 @@ body#login {
   border-radius: var(--small-radius);
 
   position: relative;
-  // top: 20%;
-  // right: 10%;
 }
 
 form {
@@ -153,7 +151,6 @@ input[type='checkbox'] {
 #made-by a,
 #skip-link a {
   color: var(--orange);
-  // text-decoration: none;
   cursor: pointer;
 }
 
@@ -227,7 +224,9 @@ input[type='checkbox'] {
   top: 5px;
 }
 
-// ===MAIN PAGE MOBILE FIRST===
+/* ==========================
+  Main page
+========================== */
 body#main {
   display: flex;
   flex-direction: column;
@@ -247,7 +246,9 @@ body#main {
   margin: auto;
 }
 
-// ===HEADER AND SIDEBAR SECTION===
+/* ==========================
+  Header and side nav bar
+========================== */
 
 #header-btn-container {
   display: none;
@@ -364,8 +365,9 @@ nav.visible {
   transform: translateX(0%);
 }
 
-// ===MAIN CONTENT OF THE PAGE===
-
+/* ==========================
+  Main page main content
+========================== */
 
 #book-collection {
   height: 85%;
@@ -387,7 +389,6 @@ nav.visible {
   background-color: #dddddd;
   border-radius: 5px;
 
-  // padding: 0.5rem 1rem;
   min-height: 100px;
 
   display: flex;
@@ -398,8 +399,7 @@ nav.visible {
   text-align: center;
   border-radius: 5px;
 
-  min-width: 100px; /* or % */
-  // flex-shrink: 0;
+  min-width: 100px;
 
   display: flex;
   align-items: center;
@@ -424,6 +424,51 @@ nav.visible {
 .rotate {
   animation: 2s rotate ease-in-out infinite;
 }
+
+/* ==========================
+  Search page style
+========================== */
+
+#search-main-top {
+  position: relative;
+
+  img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  h1 {
+    color: var(--ivory);
+    width: 100%;
+    text-align: center;
+    font-size: min(3.5rem, 7vw);
+
+    position: absolute;
+    bottom: 0px;
+  }
+}
+#search-form {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  
+
+  input {
+    width: 40%;
+  }
+  
+  button {
+    background-color: var(--blue);
+  }
+}
+#search-divider {
+  width: 93%;
+  margin: auto;
+}
+
+/* ==========================
+  Animation and media sections
+========================== */
 
 @keyframes rotate {
   from {
