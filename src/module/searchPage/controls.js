@@ -5,8 +5,8 @@ const els = {
   title: document.querySelector('[data-title-inp]'),
   author: document.querySelector('[data-author-inp]'),
   errCont: document.querySelector('[data-search-err]'),
-  loadingSvg: document.querySelector('[data-loader]')
-}
+  loadingSvg: document.querySelector('[data-loader]'),
+};
 
 // Function that converts user input to new book
 export function bookFromUserInput() {
@@ -31,7 +31,7 @@ async function bindSearch() {
       // Hides previous search
       dom.hideBookData();
       els.errCont.textContent = '';
-      
+
       // Book obj instance
       let book = bookFromUserInput();
       if (!book) return null;
@@ -40,15 +40,14 @@ async function bindSearch() {
       // Adds screen information from book obj details
       try {
         let bookData = await book.getBookData();
-        dom.renderSearchedBook(bookData); 
-        
+        dom.renderSearchedBook(bookData);
+
         // Key used to redirect user to open library website
         localStorage.setItem('bookKey', bookData.key);
-      }
-      catch {
+      } catch {
         dom.errorMessage(els.errCont, els.title.value, els.author.value);
       }
-      
+
       dom.hideLoadingSvg(els.loadingSvg);
       els.title.value = '';
       els.author.value = '';
@@ -56,7 +55,7 @@ async function bindSearch() {
     // Re directs user to open library page of given book
     if (target.closest('[data-cover]')) {
       let urlLocation = localStorage.getItem('bookKey');
-      window.open(`https://openlibrary.org/${urlLocation}`, "openLibrary");
+      window.open(`https://openlibrary.org/${urlLocation}`, 'openLibrary');
     }
   });
 }
@@ -70,7 +69,7 @@ async function renderBookOnLoad() {
 
     dom.showLoadingSvg(els.loadingSvg);
     let bookData = await book.getBookData();
-    dom.renderSearchedBook(bookData); 
+    dom.renderSearchedBook(bookData);
   }
 
   dom.hideLoadingSvg(els.loadingSvg);

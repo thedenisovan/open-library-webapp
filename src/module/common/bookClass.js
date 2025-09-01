@@ -1,4 +1,4 @@
-import { processBook, processBookAuthor } from "./apiCall.js";
+import { processBook, processBookAuthor } from './apiCall.js';
 
 const backupCover = require('../../assets/book-not-found.png');
 
@@ -7,10 +7,10 @@ export class Book {
   async #bookDataValidation() {
     let data;
     if (!this.title && !this.author) return null;
-    else if (!this.title) data = await processBookAuthor(this.author); 
+    else if (!this.title) data = await processBookAuthor(this.author);
     else data = await processBook(this.title, this.author);
 
-    if(!data) return null;
+    if (!data) return null;
     return data;
   }
 
@@ -18,7 +18,7 @@ export class Book {
   async #getCoverId() {
     const data = await this.#bookDataValidation(this.title, this.author);
     if (!data) return null;
-  
+
     return data[0]?.cover_edition_key || null;
   }
 
@@ -29,7 +29,9 @@ export class Book {
 
   async getCoverUrl() {
     const coverId = await this.#getCoverId();
-    return coverId ? `https://covers.openlibrary.org/b/olid/${coverId}-L.jpg` : backupCover;
+    return coverId
+      ? `https://covers.openlibrary.org/b/olid/${coverId}-L.jpg`
+      : backupCover;
   }
 
   // Extracts books data from api call
@@ -38,21 +40,21 @@ export class Book {
     if (!data) return null;
 
     const {
-      author_name: name = null,  
-      ebook_access: access = null, 
-      first_publish_year: publishYear = null, 
-      key = null, 
-      title = null
+      author_name: name = null,
+      ebook_access: access = null,
+      first_publish_year: publishYear = null,
+      key = null,
+      title = null,
     } = data[0];
 
     return {
       name,
-      cover: await this.getCoverUrl(), 
-      access, 
-      publishYear, 
-      key, 
-      title
-    }
+      cover: await this.getCoverUrl(),
+      access,
+      publishYear,
+      key,
+      title,
+    };
   }
 }
 
@@ -67,7 +69,7 @@ export const bookLibrary = {
     new Book('Atomic Habits', 'James Clear'),
     new Book('Where the Crawdads Sing', 'Delia Owens'),
     new Book('The Song of Achilles', 'Madeline Miller'),
-    new Book('The Invisible Life of Addie LaRue', 'V.E. Schwab')
+    new Book('The Invisible Life of Addie LaRue', 'V.E. Schwab'),
   ],
   classicBooks: [
     new Book('Pride and Prejudice', 'Jane Austen'),
@@ -79,43 +81,46 @@ export const bookLibrary = {
     new Book('Jane Eyre', 'Charlotte Brontë'),
     new Book('Wuthering Heights', 'Emily Brontë'),
     new Book('Crime and Punishment', 'Fyodor Dostoevsky'),
-    new Book('The Catcher in the Rye', 'J.D. Salinger')
+    new Book('The Catcher in the Rye', 'J.D. Salinger'),
   ],
   kidBooks: [
     new Book('Where the Wild Things Are', 'Maurice Sendak'),
-    new Book('Harry Potter and the Sorcerer\'s Stone', 'J.K. Rowling'),
+    new Book("Harry Potter and the Sorcerer's Stone", 'J.K. Rowling'),
     new Book('The Very Hungry Caterpillar', 'Eric Carle'),
-    new Book('Charlotte\'s Web', 'E.B. White'),
+    new Book("Charlotte's Web", 'E.B. White'),
     new Book('Matilda', 'Roald Dahl'),
     new Book('The Chronicles of Narnia', 'C.S. Lewis'),
     new Book('Winnie-the-Pooh', 'A.A. Milne'),
     new Book('The Cat in the Hat', 'Dr. Seuss'),
     new Book('The Tale of Peter Rabbit', 'Beatrix Potter'),
-    new Book('Anne of Green Gables', 'L.M. Montgomery')
+    new Book('Anne of Green Gables', 'L.M. Montgomery'),
   ],
   educationalBooks: [
-  new Book('The Four Agreements', 'Don Miguel Ruiz'),
-  new Book('Educated', 'Tara Westover'),
-  new Book('The Power of Habit', 'Charles Duhigg'),
-  new Book('Outliers', 'Malcolm Gladwell'),
-  new Book('The 48 Laws of Power', 'Robert Greene'),
-  new Book('Thinking, Fast and Slow', 'Daniel Kahneman'),
-  new Book('Atomic Habits', 'James Clear'),
-  new Book('The Art of Learning', 'Josh Waitzkin'),
-  new Book('Grit: The Power of Passion and Perseverance', 'Angela Duckworth'),
-  new Book('Blink', 'Malcolm Gladwell')
-],
+    new Book('The Four Agreements', 'Don Miguel Ruiz'),
+    new Book('Educated', 'Tara Westover'),
+    new Book('The Power of Habit', 'Charles Duhigg'),
+    new Book('Outliers', 'Malcolm Gladwell'),
+    new Book('The 48 Laws of Power', 'Robert Greene'),
+    new Book('Thinking, Fast and Slow', 'Daniel Kahneman'),
+    new Book('Atomic Habits', 'James Clear'),
+    new Book('The Art of Learning', 'Josh Waitzkin'),
+    new Book('Grit: The Power of Passion and Perseverance', 'Angela Duckworth'),
+    new Book('Blink', 'Malcolm Gladwell'),
+  ],
   programmingBooks: [
     new Book('Clean Code', 'Robert C. Martin'),
     new Book('The Pragmatic Programmer', 'Andrew Hunt & David Thomas'),
     new Book('JavaScript: The Good Parts', 'Douglas Crockford'),
-    new Book('You Don\'t Know JS', 'Kyle Simpson'),
-    new Book('Design Patterns: Elements of Reusable Object-Oriented Software', 'Erich Gamma et al.'),
+    new Book("You Don't Know JS", 'Kyle Simpson'),
+    new Book(
+      'Design Patterns: Elements of Reusable Object-Oriented Software',
+      'Erich Gamma et al.'
+    ),
     new Book('The Clean Coder', 'Robert C. Martin'),
     new Book('Introduction to Algorithms', 'Thomas H. Cormen et al.'),
     new Book('The Algorithm Design Manual', 'Steven S. Skiena'),
     new Book('Head First Design Patterns', 'Eric Freeman & Elisabeth Robson'),
-    new Book('Code Complete', 'Steve McConnell')
+    new Book('Code Complete', 'Steve McConnell'),
   ],
   horrorBooks: [
     new Book('The Shining', 'Stephen King'),
@@ -127,6 +132,6 @@ export const bookLibrary = {
     new Book('The Exorcist', 'William Peter Blatty'),
     new Book('House of Leaves', 'Mark Z. Danielewski'),
     new Book('World War Z', 'Max Brooks'),
-    new Book('The Silence of the Lambs', 'Thomas Harris')
-  ]
+    new Book('The Silence of the Lambs', 'Thomas Harris'),
+  ],
 };

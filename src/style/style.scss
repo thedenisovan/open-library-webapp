@@ -22,9 +22,10 @@
 @font-face {
   font-family: open-sans;
   src: url(../assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
-} 
+}
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -78,7 +79,7 @@ h2 {
   width: 90%;
 }
 
-input:not([type='checkbox']) {
+input {
   background: none;
 
   border: 1px solid var(--dark-green);
@@ -110,16 +111,6 @@ input:not([type='checkbox']) {
   margin-top: 0.1rem;
 }
 
-input[type='checkbox'] {
-  width: 1.5rem;
-  height: 1.1rem;
-  margin: 0.7rem 0.2rem 1.1rem -0.1rem !important;
-  margin-top: 1.1rem;
-  position: relative;
-
-  cursor: pointer;
-}
-
 #error-placeholder {
   position: absolute;
 }
@@ -127,7 +118,7 @@ input[type='checkbox'] {
 .entry-button {
   width: 90%;
   height: var(--input-height);
-  margin: 0 auto 1.5rem auto;
+  margin: 1rem auto 1.5rem auto;
 
   border-radius: 7px;
   border: 1px solid var(--blue);
@@ -136,10 +127,6 @@ input[type='checkbox'] {
   font-size: 1.3rem;
   cursor: pointer;
   background: linear-gradient(var(--blue), var(--ivory));
-}
-
-#registration-btn {
-  margin-top: 3rem;
 }
 
 .call {
@@ -264,10 +251,9 @@ body#main {
 
   width: min(100%, 1000px);
   margin: 0 auto;
-  padding: .5rem 0 1.5rem 0;
+  padding: 0.5rem 0 1.5rem 0;
 
   flex: 1 0 auto;
-  
 }
 #main footer {
   background-color: white;
@@ -277,7 +263,7 @@ body#main {
 nav,
 button,
 a {
-  color: white; 
+  color: white;
 }
 nav {
   position: fixed;
@@ -382,7 +368,7 @@ nav.visible {
 }
 
 .first-glide {
-  padding: .25rem 1.25rem;
+  padding: 0.25rem 1.25rem;
 }
 
 .glide {
@@ -406,7 +392,7 @@ nav.visible {
   height: clamp(7rem, 9vh, 10rem);
 
   cursor: pointer;
-  transition: transform .25s;
+  transition: transform 0.25s;
 
   &:hover {
     transform: scale(1.07);
@@ -457,12 +443,11 @@ nav.visible {
   padding: 1rem;
   display: flex;
   justify-content: space-around;
-  
 
   input {
     width: 40%;
   }
-  
+
   button {
     background-color: var(--blue);
   }
@@ -483,12 +468,11 @@ nav.visible {
   margin: 0 8%;
   gap: 4vw;
   padding: 1rem;
-  
 
   #search-cover {
     width: max(65%, 200px);
     cursor: pointer;
-    transition: .2s transform;
+    transition: 0.2s transform;
 
     &:hover {
       transform: scale(1.05);
@@ -497,7 +481,7 @@ nav.visible {
 }
 
 #search-detail {
-// background-color: rgba(128, 128, 128, 0.26);
+  // background-color: rgba(128, 128, 128, 0.26);
 }
 
 #search-title {
@@ -545,25 +529,25 @@ nav.visible {
   }
 
   #header-btn-container {
-  display: flex;
-  align-items: end;
-  gap: 2rem;
+    display: flex;
+    align-items: end;
+    gap: 2rem;
 
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
 
-  button, a {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: none;
-    
-    font-size: 1.2rem;
-    text-decoration: none;
-    cursor: pointer;
+    button,
+    a {
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      border: none;
+
+      font-size: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
-}
-
 }
 
 @media (min-width: 1025px) {

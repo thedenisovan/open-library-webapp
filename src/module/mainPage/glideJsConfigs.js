@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       600: { perView: 4 },
     },
     gap: 15,
-    bound: true
+    bound: true,
   };
 
   const glide1 = new Glide('.glide', options1);
@@ -40,5 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
   glide4.mount();
   glide5.mount();
   glide6.mount();
-
 });

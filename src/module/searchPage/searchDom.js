@@ -3,18 +3,21 @@ const els = {
   title: document.querySelector('[data-title]'),
   author: document.querySelector('[data-author]'),
   description: document.querySelector('[data-desc'),
-}
+};
 
-// Adds book data to appropriate containers
+// Adds book data to appropriate containers on and displays it on screen
 export function renderSearchedBook(book) {
   els.cover.src = book.cover;
   els.title.textContent = book.title;
-  els.author.innerHTML = 'by ' + book.name + ` <span style="color:black;">(${book.publishYear})</span>`;
+  els.author.innerHTML =
+    'by ' +
+    book.name +
+    ` <span style="color:black;">(${book.publishYear})</span>`;
 }
 
 export function hideBookData() {
   els.cover.removeAttribute('src');
-  els.title.textContent = ''
+  els.title.textContent = '';
   els.author.textContent = '';
 }
 

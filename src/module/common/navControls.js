@@ -25,8 +25,7 @@ function bindHeaderEvents() {
   });
 }
 
-document.querySelectorAll('.curr-user')
-  .forEach((user) => {
+document.querySelectorAll('.curr-user').forEach((user) => {
   user.textContent = localStorage.getItem('currActiveUsername');
 });
 

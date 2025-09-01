@@ -24,7 +24,7 @@
             tabindex="0"
           ></p>
         </div>
-        
+
         <button
           id="burger-btn"
           data-burger-btn
@@ -55,11 +55,7 @@
           <a href="./main.html">Trending books</a>
         </button>
 
-        <button
-          data-search-book
-          aria-label="Go to search page"
-          class="active"
-        >
+        <button data-search-book aria-label="Go to search page" class="active">
           <img
             src="../assets/NavSvg/search-svgrepo-com.svg"
             aria-hidden="true"
@@ -114,19 +110,31 @@
     </nav>
     <main id="search">
       <section id="search-main-top">
-        <img src="../assets/book-shelf.jpg" aria-hidden="true">
+        <img src="../assets/book-shelf.jpg" aria-hidden="true" />
         <h1>Find your next favorite book</h1>
       </section>
       <form action="" id="search-form">
-        <input data-title-inp type="text" placeholder="Title" aria-label="Books title">
-        <input data-author-inp type="text" placeholder="Author" aria-label="Books author">
-        <button type="button" aria-label="search-book" data-search>Search</button>
+        <input
+          data-title-inp
+          type="text"
+          placeholder="Title"
+          aria-label="Books title"
+        />
+        <input
+          data-author-inp
+          type="text"
+          placeholder="Author"
+          aria-label="Books author"
+        />
+        <button type="button" aria-label="search-book" data-search>
+          Search
+        </button>
       </form>
-      <hr id="search-divider">
+      <hr id="search-divider" />
       <div data-search-err id="search-error"></div>
-      
+
       <section id="book-panel">
-        <img id="search-cover" data-cover aria-hidden="true">
+        <img id="search-cover" data-cover aria-hidden="true" />
         <div id="search-detail">
           <p id="search-title" data-title></p>
           <p id="search-author" data-author></p>
@@ -134,7 +142,7 @@
         </div>
       </section>
       <div id="search-loading" class="hidden" data-loader>
-          <img src="../assets/loading.svg" class="rotate">
+        <img src="../assets/loading.svg" class="rotate" />
       </div>
     </main>
     <footer></footer>
