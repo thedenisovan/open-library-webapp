@@ -390,7 +390,9 @@ nav.visible {
   display: flex;
   align-items: center;
   height: clamp(7rem, 9vh, 10rem);
+}
 
+.book-cover {
   cursor: pointer;
   transition: transform 0.25s;
 

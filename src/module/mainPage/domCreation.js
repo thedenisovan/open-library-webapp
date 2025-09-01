@@ -1,4 +1,4 @@
-import { bookLibrary } from '../common/bookClass';
+import * as cl from '../common/bookClass';
 const loadingSvg = require('../../assets/loading-svgrepo-com.svg');
 
 // Makes html containers for each book
@@ -26,10 +26,13 @@ async function displayCovers(glideIdx, books) {
     const slide = document.querySelector(
       `.glide${glideIdx} .glide__track .glide__slides #book${i} img`
     );
-    const url = await book.getCoverUrl();
-
+    const data = await getBookData(book.title, book.author);
+    slide.classList.add('book-cover');
     slide.classList.remove('rotate');
-    slide.setAttribute('src', url);
+    if (!data) return null;
+
+    slide.setAttribute('data-key', data.key);
+    slide.setAttribute('src', data.cover);
     slide.setAttribute('alt', book.title);
     slide.setAttribute('tabindex', '0');
   }
@@ -51,8 +54,19 @@ for (let i = 2; i < 7; i++) {
   makeBookShelf(10, `.glide${i} .glide__track .glide__slides`)
 }
 
-displayCovers(2, bookLibrary.trendingBooks);
-displayCovers(3, bookLibrary.classicBooks);
-displayCovers(4, bookLibrary.educationalBooks);
-displayCovers(5, bookLibrary.kidBooks);
-displayCovers(6, bookLibrary.horrorBooks);
+async function getBookData(title, author) {
+  try {
+    const book = new cl.Book(title, author);
+    const data = await book.getBookData();
+    return data;
+  }
+  catch(err) {
+    return null;
+  }
+}
+
+displayCovers(2, cl.bookLibrary.trendingBooks);
+displayCovers(3, cl.bookLibrary.classicBooks);
+displayCovers(4, cl.bookLibrary.educationalBooks);
+displayCovers(5, cl.bookLibrary.kidBooks);
+displayCovers(6, cl.bookLibrary.horrorBooks);
