@@ -29,7 +29,7 @@ export class Book {
 
   async getCoverUrl() {
     const coverId = await this.#getCoverId();
-    return coverId ? `https://covers.openlibrary.org/b/olid/${coverId}-M.jpg` : backupCover;
+    return coverId ? `https://covers.openlibrary.org/b/olid/${coverId}-L.jpg` : backupCover;
   }
 
   // Extracts books data from api call

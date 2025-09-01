@@ -406,7 +406,13 @@ nav.visible {
   height: clamp(7rem, 9vh, 10rem);
 
   cursor: pointer;
+  transition: transform .25s;
+
+  &:hover {
+    transform: scale(1.07);
+  }
 }
+
 .glide__arrow {
   background-color: none !important;
   border: none;

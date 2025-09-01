@@ -5,6 +5,7 @@ const els = {
   description: document.querySelector('[data-desc'),
 }
 
+// Adds book data to appropriate containers
 export function renderSearchedBook(book) {
   els.cover.src = book.cover;
   els.title.textContent = book.title;
@@ -23,10 +24,6 @@ export function showLoadingSvg(el) {
 
 export function hideLoadingSvg(el) {
   el.classList.add('hidden');
-}
-
-export function redirectUserToOpenLibrary(book) {
-  window.location.href = `https://openlibrary.org/books/${book.key}`;
 }
 
 export function errorMessage(errContainer, title = '', author = '') {
