@@ -9,13 +9,15 @@ const els = {
 };
 
 // Function that converts user input to new book
-export function bookFromUserInput() {
-  const title = els.title.value;
-  const author = els.author.value;
-
-  if (!title && !author) return null;
-
-  return new cl.Book(title, author);
+export async function getBookData(title, author) {
+  try {
+      const book = new cl.Book(title, author);
+      const data = await book.getBookData();
+      return data;
+    }
+    catch(err) {
+      return null;
+    }
 }
 
 // Binds event listener on main search section
@@ -31,19 +33,21 @@ async function bindSearch() {
       // Hides previous search
       dom.hideBookData();
       els.errCont.textContent = '';
-
-      // Book obj instance
-      let book = bookFromUserInput();
-      if (!book) return null;
       dom.showLoadingSvg(els.loadingSvg);
+
+      // Book boj instances values
+      let data = await getBookData(els.title.value, els.author.value);
+      if (!data) {
+        dom.hideLoadingSvg(els.loadingSvg);
+        return null;
+      };
 
       // Adds screen information from book obj details
       try {
-        let bookData = await book.getBookData();
-        dom.renderSearchedBook(bookData);
+        dom.renderSearchedBook(data);
 
         // Key used to redirect user to open library website
-        localStorage.setItem('bookKey', bookData.key);
+        localStorage.setItem('bookKey', data.key);
       } catch {
         dom.errorMessage(els.errCont, els.title.value, els.author.value);
       }
@@ -60,6 +64,7 @@ async function bindSearch() {
   });
 }
 
+// Function which renders book details on screen if user clicks on cover on main page
 async function renderBookOnLoad() {
   const bookTitle = localStorage.getItem('targetBook');
 

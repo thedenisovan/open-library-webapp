@@ -225,7 +225,7 @@ body#main {
   background-color: white;
   flex: 0 0 auto;
 }
-#max-width {
+.max-width {
   display: flex;
   justify-content: space-between;
 
@@ -475,6 +475,7 @@ nav.visible {
     width: max(65%, 200px);
     cursor: pointer;
     transition: 0.2s transform;
+    box-shadow: 0 10px 20px gray;
 
     &:hover {
       transform: scale(1.05);
@@ -583,3 +584,5 @@ nav.visible {
     height: 8.5rem;
   }
 }
+
+
