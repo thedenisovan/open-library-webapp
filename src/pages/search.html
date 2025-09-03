@@ -15,7 +15,6 @@
         <div id="header-btn-container">
           <a class="inactive" href="./main.html">Trending books</a>
           <a href="" class="active">Search</a>
-          <button class="inactive">My library</button>
           <a href="./index.html" class="inactive">Sing out</a>
           <p
             class="curr-user"
@@ -62,19 +61,6 @@
             width="30"
           />
           <p>Search book</p>
-        </button>
-
-        <button
-          data-my-books
-          aria-label="Go my saved books page"
-          class="inactive"
-        >
-          <img
-            src="../assets/NavSvg/book-user-svgrepo-com.svg"
-            aria-hidden="true"
-            width="30"
-          />
-          <p>My books</p>
         </button>
 
         <hr />
@@ -135,7 +121,7 @@
 
       <section id="book-panel">
         <img id="search-cover" data-cover aria-hidden="true" />
-        <div id="search-detail">
+        <div id="search-detail" data-search-container>
           <p id="search-title" data-title></p>
           <p id="search-author" data-author></p>
           <p id="search-desc" data-desc></p>

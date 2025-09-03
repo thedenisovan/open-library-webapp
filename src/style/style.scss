@@ -419,6 +419,10 @@ nav.visible {
   Search page style
 ========================== */
 
+main#search {
+  padding-bottom: 0;
+}
+
 #search-main-top {
   position: relative;
 
@@ -463,12 +467,13 @@ nav.visible {
 
 #book-panel {
   display: flex;
-  margin: 0 8%;
-  gap: 4vw;
-  padding: 1rem;
+  align-items: center;
+  margin: 2% 0 0 5%;
+  gap: 3vw;
+  padding: .5rem;
 
   #search-cover {
-    width: max(65%, 200px);
+    width: max(45%, 150px);
     cursor: pointer;
     transition: 0.2s transform;
     box-shadow: 0 10px 20px gray;
@@ -480,7 +485,7 @@ nav.visible {
 }
 
 #search-title {
-  font-size: clamp(1rem, 5vw, 40px);
+  font-size: clamp(.5rem, 4vw, 30px);
 }
 #search-author {
   color: darkslategray;
@@ -497,6 +502,22 @@ nav.visible {
   img {
     width: 15%;
   }
+}
+
+#save-btn {
+  cursor: pointer;
+  transition: transform .25s;
+  border: none;
+  width: 4rem;
+  background-color: var(--ivory );
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.saved {
+
 }
 
 /* =========================
