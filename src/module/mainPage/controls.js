@@ -14,8 +14,11 @@ document
         ? target.closest('img').dataset.key
         : '';
 
-      localStorage.setItem('bookKey', slideKey);
-      localStorage.setItem('targetBook', slideTitle);
-      window.location = './search.html';
+      // If book have loaded and user clicks on cover send him to book search page
+      if (slideKey) {
+        localStorage.setItem('bookKey', slideKey);
+        localStorage.setItem('targetBook', slideTitle);
+        window.location = './search.html';
+      }
     }
   });
