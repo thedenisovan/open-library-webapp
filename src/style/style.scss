@@ -367,6 +367,31 @@ nav.visible {
   padding: 0.25rem 1.25rem;
 }
 
+#first, #second, #third, #fourth {
+  background-size: contain;
+  color: whitesmoke;
+  text-shadow: 3px 3px black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#first {
+  background-image: url('../assets/MainHead/books.jpg');
+}
+
+#second {
+  background-image: url('../assets/MainHead/library.jpg');
+}
+
+#third {
+  background-image: url('../assets/MainHead/read.jpg');
+}
+
+#fourth {
+  background-image: url('../assets/MainHead/educate.jpg');
+}
+
 .glide {
   background-color: #dddddd;
   border-radius: 5px;

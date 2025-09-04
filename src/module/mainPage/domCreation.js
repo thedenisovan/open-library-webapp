@@ -2,7 +2,7 @@ import * as cl from '../common/bookClass';
 const svgRepo = {
   loadingSvg: require('../../assets/loading-svgrepo-com.svg'),
   arrowLeft: require('../../assets/MainHead/previous-svgrepo-com.svg'),
-  arrowRight: require('../../assets/MainHead/next-svgrepo-com.svg')
+  arrowRight: require('../../assets/MainHead/next-svgrepo-com.svg'),
 }
 
 // Makes html containers for each book and adds gliderJs html classes 
