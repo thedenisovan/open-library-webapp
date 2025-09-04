@@ -21,6 +21,12 @@ Built with a focus on **responsiveness**, **interactivity**, and a lightweight f
 
 ## 📸 Preview
 
+<img width="414" height="900" alt="Screenshot from 2025-09-04 11-28-45" src="https://github.com/user-attachments/assets/50c5e696-6313-4bab-b88b-cb8960113380" />
+<img width="414" height="900" alt="Screenshot from 2025-09-04 11-29-11" src="https://github.com/user-attachments/assets/cd5614db-69e7-4871-bc31-f66395b7a6c0" />
+<img width="1898" height="949" alt="Screenshot from 2025-09-04 11-29-44" src="https://github.com/user-attachments/assets/6b85beef-4308-4a38-9ae8-5fb2b850bf49" />
+
+👁️ Give it a shot [shot](https://thedenisovan.github.io/open-library-webapp/)
+
 
 ## 🔮 Future Improvements
 - API integration for live book data.  
@@ -29,3 +35,4 @@ Built with a focus on **responsiveness**, **interactivity**, and a lightweight f
 
 ---
 💡 Inspired by [Open Library](https://openlibrary.org/) 
+
