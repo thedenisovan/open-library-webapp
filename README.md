@@ -27,12 +27,7 @@ Built with a focus on **responsiveness**, **interactivity**, and a lightweight f
 
 👁️ Give it a shot [shot](https://thedenisovan.github.io/open-library-webapp/)
 
-
-## 🔮 Future Improvements
-- API integration for live book data.  
-- User authentication with backend.  
-- Favorite/Bookmark system.  
-
 ---
 💡 Inspired by [Open Library](https://openlibrary.org/) 
+
 
